@@ -1,0 +1,215 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Lakki+Reddyy&family=Fuggles&family=Indie+Flower&display=swap"
+    rel="stylesheet">
+
+
+
+  {% if title %}
+  <title>mine resume - {{ title }}</title>
+  {% else %}
+  <title>mine resume</title>
+  {% endif %}
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="navbar navbar-expand-md navbar-dark bg-black fixed-top">
+
+      <div class="container">
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarToggle"
+          aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggle">
+          <div class="navbar-nav mr-auto">
+
+
+            {% if user.is_authenticated %}
+            <img src="{% static 'images/logo.png' %}" style="margin-right: 5%; width: 33%;">
+            <a class="nav-item nav-link" href="{% url 'home' %}">Home</a>
+            <a class="nav-item nav-link" href="{% url 'subscription' %}">Subscribe</a>
+
+
+            {% else %}
+            <a href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}"
+                style="margin-right: 5%; width: 48%;"></a>
+
+            {% endif %}
+
+          </div>
+          <!-- Navbar Right Side -->
+          <div class="navbar-nav">
+
+            <a class="nav-item nav-link" href="{% url 'about' %}">About</a>
+            <a class="nav-item nav-link mr-2" href="{% url 'contact' %}">Contact Us</a>
+
+
+            {% if user.is_authenticated %}
+
+
+            <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
+            <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+            {% else %}
+
+
+            <button type="button" class="nav-item nav-link btn btn-outline-primary btn-sm mr-2" data-toggle="modal"
+              data-target="#loginModal">
+              Sign In
+            </button>
+
+            <button type="button" class="nav-item nav-link btn btn-outline-primary btn-sm" data-toggle="modal"
+              data-target="#signupModal">
+              Sign Up
+            </button>
+
+            {% endif %}
+
+          </div>
+    </nav>
+
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+      <strong>Message : </strong> {{ message }}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endfor %}
+
+
+
+
+
+
+    <!-- SignUp Modal -->
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="signupModalTitle">SignUp Here</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="/register" method='POST'>
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" name="username"
+                  placeholder="Unique username (alpha-numeric only)">
+              </div>
+              <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter Your First Name">
+              </div>
+              <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" class="form-control" id="lname" name="lname" placeholder="Enter Your Last Name">
+              </div>
+              <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+              </div>
+              <div class="form-group">
+                <label for="pass1">Choose a password</label>
+                <input type="password" class="form-control" id="pass1" name="pass1" placeholder="Choose Your Password">
+              </div>
+              <div class="form-group">
+                <label for="pass2">Confirm Password</label>
+                <input type="password" class="form-control" id="pass2" name="pass2"
+                  placeholder="Enter your password again">
+              </div>
+
+
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="loginModalTitle">Login Here</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action='/login' method='POST'>
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="loginusername" name="loginusername"
+                  placeholder="Choose a unique username">
+              </div>
+              <div class="form-group">
+                <label for="pass">Enter your password </label>
+                <input type="password" class="form-control" id="loginpassword" name="loginpassword"
+                  placeholder="Enter your password ">
+              </div>
+              {% csrf_token %}
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+          </div>
+
+
+
+        </div>
+      </div>
+    </div>
+    </nav>
+  </header>
+
+  {% block content %}
+
+
+
+  {% endblock %}
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

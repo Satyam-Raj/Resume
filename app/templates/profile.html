@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+
+<a href="{% url 'edit_profile' %}">Edit Profile</a>
+
+
+
+
+<div style="color: orange;">
+    
+
+<ul>
+    <p style="text-align: center;">{{  user.username }}  {{  user.professional.Last_Name }}</p>
+   
+    
+
+
+    <!-- <h2>Description: <br>
+        {{  criteria.Description }}
+       </h2> -->
+
+    <p>
+        {% if not user.Description %}
+            <p style="margin-right:30%; margin-left: 30%; color: darkorange;">Intro</p>
+            <p style="margin-right:30%; margin-left: 30%;">{{  user.Introduction }}</p>
+                
+
+        {% else %}
+            <p style="margin-right:20%;">First_Name: {{  user.First_Name }}</p>
+        {% endif %}
+        <hr style="margin-right:30%; margin-left: 30%;border-top: 1px solid rgb(67, 80, 255)">
+
+        
+                        {{  user.Introduction }}
+
+    </p>
+   
+</ul>
+
+ 
+
+</div>
+
+
+
+
+<div style=" color: orange;">
+
+    <img  style=" display: block; margin:auto; max-width: 150px; max-height: 150px;"" src="{{ user.professional.image.url }}" alt="image">
+
+    <div style="text-align: center;" >
+        <p>{{  user.professional.First_Name }}  {{  user.professional.Last_Name }}</p>
+        <p>{{user.professional.Age}}</p> 
+
+
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

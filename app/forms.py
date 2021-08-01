@@ -45,8 +45,8 @@ class Profile_update_form(forms.ModelForm):
            'Third_Skill',
            'Fourth_Skill',
            'Fifth_Skill',
-           'Sixth_Skill',
-           'Seventh_Skill',
+        #    'Sixth_Skill',
+        #    'Seventh_Skill',
 
            'Fist_Language',
            'Second_Language',
@@ -100,8 +100,8 @@ class Profile_update_form(forms.ModelForm):
             'Third_Skill'                       :           forms.TextInput(attrs={'class':'form-control', 'placeholder':'Skill three'}),
             'Fourth_Skill'                      :           forms.TextInput(attrs={'class':'form-control', 'placeholder':'Skill four (This field is optional)'}),
             'Fifth_Skill'                       :           forms.TextInput(attrs={'class':'form-control', 'placeholder':'Skill five (This field is optional)'}),
-            'Sixth_Skill'                       :           forms.TextInput(attrs={'class':'form-control', 'placeholder':'Skill six (This field is optional)'}),
-            'Seventh_Skill'                     :           forms.TextInput(attrs={'class':'form-control', 'placeholder':'Skill seven (This field is optional)'}),
+            # 'Sixth_Skill'                       :           forms.TextInput(attrs={'class':'form-control', 'placeholder':'Skill six (This field is optional)'}),
+            # 'Seventh_Skill'                     :           forms.TextInput(attrs={'class':'form-control', 'placeholder':'Skill seven (This field is optional)'}),
 
 
             'Fist_Language'                     :           forms.TextInput(attrs={'class':'form-control', 'placeholder':'First language'}),

@@ -5,59 +5,198 @@
 {% block content %}
 
 
-<a href="{% url 'edit_profile' %}">Edit Profile</a>
 
 
 
 
-<div style="color: orange;">
+<div style=" color: white;">
+    <div>
+        <img  style=" display: block; margin:auto; max-width: 150px; max-height: 150px;"" src="{{ user.professional.image.url }}" alt="image">
+    </div>
     
+    <div>
+        <p style="text-align: center;">{{  user.professional.First_Name }}  {{  user.professional.Last_Name }} ({{  user.professional.Age }})</p>
+        <p style="text-align: center;">{{user.professional.Mobile_Number}}</p> 
+    </div>
 
-<ul>
-    <p style="text-align: center;">{{  user.username }}  {{  user.professional.Last_Name }}</p>
-   
-    
+
+    <div>        
+        <hr  style="width:40%; margin: auto; border-top: 1px solid rgb(67, 80, 255)">
 
 
-    <!-- <h2>Description: <br>
-        {{  criteria.Description }}
-       </h2> -->
+        <br>
+        <p style="padding-left: 30%;color: orange;">Introduction:</p>
+        <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Introduction }}</p>
 
-    <p>
-        {% if not user.Description %}
-            <p style="margin-right:30%; margin-left: 30%; color: darkorange;">Intro</p>
-            <p style="margin-right:30%; margin-left: 30%;">{{  user.Introduction }}</p>
-                
+        {% if user.professional.Currently_or_was_working_for %}
 
-        {% else %}
-            <p style="margin-right:20%;">First_Name: {{  user.First_Name }}</p>
-        {% endif %}
-        <hr style="margin-right:30%; margin-left: 30%;border-top: 1px solid rgb(67, 80, 255)">
-
+            <p style="padding-left: 30%;color: orange;">Currently working or was working for:</p>
+            <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Currently_or_was_working_for }}</p>
         
-                        {{  user.Introduction }}
+        
+            {% if user.professional.Description %}
+                <p style="padding-left: 30%;color: orange;">Description:</p>
+                <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Description }}</p>
 
-    </p>
-   
-</ul>
+               
+            {% endif %}
+        {% endif %}
+            
+        <hr  style="width:40%; margin: auto; border-top: 1px solid rgb(67, 80, 255)">
+        <br>
 
- 
+        {% if user.professional.First_Experience %}
 
-</div>
+            <p style="padding-left: 30%;color: orange;">First Experience:</p>
+            <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.First_Experience }}</p>
+
+            {% if user.professional.First_Experience_Description %}
+
+                <p style="padding-left: 30%;color: orange;"> Description:</p>
+                <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.First_Experience_Description }}</p>
+            
+
+                {% if user.professional.Second_Experience %}
+                    <p style="padding-left: 30%;color: orange;">Second Experience:</p>
+                    <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Second_Experience }}</p>
+                
+                    {% if user.professional.Second_Experience_Description %}
+
+                        <p style="padding-left: 30%;color: orange;">Description:</p>
+                        <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Second_Experience_Description }}</p>
+
+                    
+
+                        {% if user.professional.Third_Experience %}
+                            <p style="padding-left: 30%;color: orange;">Third Experience:</p>
+                            <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Third_Experience }}</p>
+
+                            {% if user.professional.Third_Experience_Description %}
+
+                                <p style="padding-left: 30%;color: orange;">Description:</p>
+                                <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Third_Experience_Description }}</p>
+                        
+
+                                {% if user.professional.Fourth_Experience %}
+
+                                    <p style="padding-left: 30%;color: orange;">Fourth Experience:</p>
+                                    <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Fourth_Experience }}</p>
+
+                                    {% if user.professional.Fourth_Experience_Description %}
+
+                                        <p style="padding-left: 30%;color: orange;">Description:</p>
+                                        <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Fourth_Experience_Description }}</p>
+                                    
+
+                                        {% if user.professional.Fifth_Experience %}
+
+                                            <p style="padding-left: 30%;color: orange;">Fifth Experience:</p>
+                                            <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Fifth_Experience }}</p>
+
+                                            {% if user.professional.Fifth_Experience_Description %}
+
+                                                <p style="padding-left: 30%;color: orange;">Description:</p>
+                                                <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Fifth_Experience_Description }}</p>
+
+                                                
+                                            {% endif %}
+                                        {% endif %}
+                                    {% endif %}
+                                {% endif %}
+                            {% endif %}
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
+            {% endif %}
+        {% endif %}
+            
+        
+        <hr  style="width:40%; margin: auto; border-top: 1px solid rgb(67, 80, 255)">
+        <br>
+            
+
+        {% if user.professional.School %}
+            <p style="padding-left: 30%;color: orange;">School:</p>
+            <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.School }}</p>
+
+            {% if user.professional.School_Description %}
+
+                <p style="padding-left: 30%;color: orange;">Description:</p>
+                <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.School_Description }}</p>
+            {% endif %}
+        {% endif %}
+
+        {% if user.professional.College %}
+
+            <p style="padding-left: 30%;color: orange;">College:</p>
+            <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.College }}</p>
+
+            {% if user.professional.College_Description %}
+
+                <p style="padding-left: 30%;color: orange;">Description:</p>
+                <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.College_Description }}</p>
+
+               
+            {% endif %}
+        {% endif %}
 
 
+        <hr  style="width:40%; margin: auto; border-top: 1px solid rgb(67, 80, 255)">
+        <br>
 
 
-<div style=" color: orange;">
+        {% if user.professional.First_Skill %}
+            <p style="padding-left: 30%;color: orange;">First Skill:</p>
+            <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.First_Skill }}</p>
 
-    <img  style=" display: block; margin:auto; max-width: 150px; max-height: 150px;"" src="{{ user.professional.image.url }}" alt="image">
+            {% if user.professional.Second_Skill %}
 
-    <div style="text-align: center;" >
-        <p>{{  user.professional.First_Name }}  {{  user.professional.Last_Name }}</p>
-        <p>{{user.professional.Age}}</p> 
+                <p style="padding-left: 30%;color: orange;">Second Skill:</p>
+                <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Second_Skill }}</p>
 
+                    {% if user.professional.Third_Skill %}
 
+                        <p style="padding-left: 30%;color: orange;">Third Skill:</p>
+                        <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Third_Skill }}</p>
 
+                            {% if user.professional.Fourth_Skill %}
+
+                                <p style="padding-left: 30%;color: orange;">Fourth Skill:</p>
+                                <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Fourth_Skill }}</p>
+
+                                {% if user.professional.Fifth_Skill %}
+
+                                    <p style="padding-left: 30%;color: orange;">Fifth Skill:</p>
+                                    <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Fifth_Skill }}</p>
+
+                                    
+                                {% endif %}
+                            {% endif %}
+                    {% endif %}
+            {% endif %}
+        {% endif %}
+            
+        <hr  style="width:40%; margin: auto; border-top: 1px solid rgb(67, 80, 255)">
+        <br>
+            
+
+        {% if user.professional.Fist_Language %}
+            <p style="padding-left: 30%;color: orange;">First Language:</p>
+            <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Fist_Language }}</p>
+
+                {% if user.professional.Second_Language %}
+
+                    <p style="padding-left: 30%;color: orange;">Second Language:</p>
+                    <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Second_Language }}</p>
+
+                    {% if user.professional.Third_Language %}
+
+                        <p style="padding-left: 30%;color: orange;">Third Language:</p>
+                        <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Third_Language }}</p>
+                    {% endif %}
+                {% endif %}
+        {% endif %}
+        
     </div>
 
 </div>

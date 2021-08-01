@@ -78,6 +78,15 @@ def register_view(request):
             messages.error(request, "Password do not match")
             return redirect('index')
 
+
+        if User.objects.filter(email=email).exists():
+            messages.error(request, "Email already exists or taken")
+            return redirect('index')
+
+        if User.objects.filter(username=username).exists():
+            messages.error(request, "username already exists or taken")
+            return redirect('index')
+            
         # if User.objects.filter(username=username).exists():
         #     messages.error(request, "Username already exists")
         #     return redirect('register')

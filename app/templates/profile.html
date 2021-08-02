@@ -10,19 +10,26 @@
 
 
 <div style=" color: white;">
-    <div>
-        <img  style=" display: block; margin:auto; max-width: 150px; max-height: 150px;"" src="{{ user.professional.image.url }}" alt="image">
-    </div>
-    
-    <div>
-        <p style="text-align: center;">{{  user.professional.First_Name }}  {{  user.professional.Last_Name }} ({{  user.professional.Age }})</p>
-        <p style="text-align: center;">{{user.professional.Mobile_Number}}</p> 
+    <div class="box">
+        <div class="content">
+            <img  src="{{ user.professional.image.url }}" alt="image">
+        </div>
+        
+        <div class="content">
+            <p>{{  user.professional.First_Name }}</p>
+            <p>{{  user.professional.Last_Name }}</p>
+            <p>Age:{{  user.professional.Age }}</p>
+            <p>Mobile:{{ user.professional.Mobile_Number }}</p>
+            <p>Email:{{  user.professional.Email }}</p>
+            <p>Address:{{  user.professional.Address }}</p> 
+        </div>
     </div>
 
 
     <div>        
-        <hr  style="width:40%; margin: auto; border-top: 1px solid rgb(67, 80, 255)">
+        
 
+        <hr  style="width:40%; margin: auto; border-top: 1px solid rgb(67, 80, 255)">
 
         <br>
         <p style="padding-left: 30%;color: orange;">Introduction:</p>

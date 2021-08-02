@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, HttpResponse
-from .models import Contact
+from .models import Contact, Professional
 from .forms import Contact_form, Profile_update_form
 from django.contrib import messages
 from django.contrib.auth.models import User
@@ -129,6 +129,7 @@ def subscription_view(request):
 
 @login_required(login_url='index')
 def profile_view(request):
+
 
     return render(request, 'profile.html')
 

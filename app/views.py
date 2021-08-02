@@ -80,20 +80,14 @@ def register_view(request):
 
 
         if User.objects.filter(email=email).exists():
-            messages.error(request, "Email already exists or taken")
+            messages.error(request, "Email already exists or taken.")
             return redirect('index')
 
         if User.objects.filter(username=username).exists():
-            messages.error(request, "username already exists or taken")
+            messages.error(request, "Username already taken, please try something else.")
             return redirect('index')
             
-        # if User.objects.filter(username=username).exists():
-        #     messages.error(request, "Username already exists")
-        #     return redirect('register')
-
-        # if User.objects.filter(email=email).count() > 0:
-        #     messages.error(request, "Email already exists")
-        #     return redirect('index')
+        
         
         
         # Create the user
@@ -130,18 +124,6 @@ def contact_view(request):
 def subscription_view(request):
     return render(request, 'subscription.html')
 
-
-# @login_required(login_url='index')
-# def edit_profile_view(request):
-#     form = Professional_form(request.POST or None)
-#     if request.method =='POST':
-#         form = Professional_form(request.POST)
-#         if form.is_valid():
-#             print(form)                                                             # this is profile edit view
-#             form.save()
-
-#             return redirect('home')
-#     return render(request, 'edit_profile.html', {'form':form})
 
 
 

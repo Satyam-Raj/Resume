@@ -130,6 +130,7 @@ def subscription_view(request):
 @login_required(login_url='index')
 def profile_view(request):
 
+    
 
     return render(request, 'profile.html')
 

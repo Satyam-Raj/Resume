@@ -128,10 +128,9 @@ def subscription_view(request):
 
 
 @login_required(login_url='index')
-def profile_view(request):
+def profile_view(request,username):
 
     
-
     return render(request, 'profile.html')
 
 
@@ -163,3 +162,18 @@ def logout_view(request):
     logout(request)
     messages.success(request, "Successfully logged out")
     return redirect('index')
+
+
+
+from django.contrib.auth import get_user_model
+def try_view(request, pk):
+
+    # User = get_user_model()
+    pro = Professional.objects.all()
+    p1 = Professional.objects.get(First_Name='Satyam')
+    
+    # for user in User:
+        # data = user.objects.all()
+    print(p1)
+
+    return render(request, 'try.html')

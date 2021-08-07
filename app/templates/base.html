@@ -47,6 +47,14 @@
             <img src="{% static 'images/logo.png' %}" style="margin-right: 5%; width: 33%;">
             <a class="nav-item nav-link" href="{% url 'home' %}">Home</a>
             <a class="nav-item nav-link" href="{% url 'subscription' %}">Subscribe</a>
+            
+            <!-- search bar in nav bar -->
+            <div class="container-fluid ">
+              <form method='get' action='/search'  class="d-flex">
+                <input class="form-control me-2  mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="query" id="query" >
+                <button class="btn btn-outline-primary " type="submit">Search</button>
+              </form>
+            </div>
 
 
             {% else %}
@@ -55,12 +63,16 @@
 
             {% endif %}
 
+                
+              
+            
+
           </div>
           <!-- Navbar Right Side -->
           <div class="navbar-nav">
 
             <a class="nav-item nav-link" href="{% url 'about' %}">About</a>
-            <a class="nav-item nav-link mr-2" href="{% url 'contact' %}">Contact Us</a>
+            <a class="nav-item nav-link mr-2" href="{% url 'contact' %}">Contact</a>
 
 
             {% if user.is_authenticated %}
@@ -195,7 +207,6 @@
 
 
 
-  <a class="btn btn-primary" href="{% url 'try' 2012 %}">try try</a>
 
 
   {% block content %}

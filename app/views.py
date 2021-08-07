@@ -1,11 +1,10 @@
-from django.shortcuts import render, redirect, HttpResponse
+from django.shortcuts import render, redirect, HttpResponse, get_object_or_404
 from .models import Contact, Professional
 from .forms import Contact_form, Profile_update_form
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
-# Professional_form,
 
 @login_required(login_url='index')
 def home_view(request):
@@ -164,16 +163,23 @@ def logout_view(request):
     return redirect('index')
 
 
+def search_view(request):
 
-from django.contrib.auth import get_user_model
-def try_view(request, pk):
-
-    # User = get_user_model()
-    pro = Professional.objects.all()
-    p1 = Professional.objects.get(First_Name='Satyam')
+    query = request.GET['query']
+    query_result = Professional.objects.get(user__username__contains=query)
     
-    # for user in User:
-        # data = user.objects.all()
-    print(p1)
+    
+    print(query)
+    print(query_result)
 
-    return render(request, 'try.html')
+
+    context = {
+        'query':query,
+        'query_result':query_result,
+    }
+
+    return render(request, 'search.html',context)
+    
+
+
+

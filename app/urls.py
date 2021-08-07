@@ -13,5 +13,6 @@ urlpatterns = [
     path('edit_profile', views.profile_update_view, name='edit_profile'),
     path('profile/<username>', views.profile_view, name='profile'),
     path('logout', views.logout_view, name='logout'),
-    path('<str:pk>', views.try_view, name='try'),
+    path('search', views.search_view, name='search'),
+    
 ]

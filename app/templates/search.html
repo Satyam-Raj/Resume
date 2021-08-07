@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<img  src="{{ query_result.image.url }}">
+<p style="color: orange" >{{ query_result.First_Name }}</p>
+<p style="color: orange" >{{ query_result.Last_Name }}</p>
+<p style="color: orange" >{{ query_result.Mobile_Number }}</p>
+<p style="color: orange" >{{ query_result.Address }}</p>
+
+
+
+
+{%  endblock %}

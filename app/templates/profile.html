@@ -5,13 +5,20 @@
 {% block content %}
 
 
-<a class="btn btn-primary" href="{% url 'edit_profile' %}">Edit Profile</a>
 
+
+    <div  style=" color: white;" class="d-flex justify-content-center row mx-md-n5">
+        <img style="max-width: 150px; max-height:150px" class="p-2" src="{{ user.professional.image.url }}" alt="image">
+        <div class="profiles" >
+        <p class="p-2  px-md-5">{{  user.professional.First_Name }} {{  user.professional.Last_Name }} <br> {{  user.professional.Date_of_Birth }} <br> {{ user.professional.Mobile_Number }} <br> {{  user.professional.Email }} <br> {{  user.professional.Address }} <br>  </p>
+        </div>
+        <a class="p-2  " href="{% url 'edit_profile' %}">Edit Profile</a>
+    </div>
 
 
 
 <div style=" color: white;">
-    <div class="box">
+    <!-- <div class="box">
         <div class="content">
             <img  src="{{ user.professional.image.url }}" alt="image">
         </div>
@@ -19,12 +26,9 @@
         <div class="content">
             <p>{{  user.professional.First_Name }}</p>
             <p>{{  user.professional.Last_Name }}</p>
-            <p>Age-{{  user.professional.Age }}</p>
-            <p>Mobile-{{ user.professional.Mobile_Number }}</p>
-            <p>Email-{{  user.professional.Email }}</p>
-            <p>Address-{{  user.professional.Address }}</p> 
+            
         </div>
-    </div>
+    </div> -->
 
 
     <div>        

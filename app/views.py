@@ -141,7 +141,7 @@ def profile_update_view(request):
         profile_form = Profile_update_form(request.POST, request.FILES, instance=request.user.professional)
         if profile_form.is_valid():
             profile_form.save()
-            return redirect('profile')
+            return redirect('profile/<username>')
 
     else:
         profile_form = Profile_update_form(instance=request.user.professional)

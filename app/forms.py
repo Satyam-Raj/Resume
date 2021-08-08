@@ -9,7 +9,7 @@ class Profile_update_form(forms.ModelForm):
             'image',
             'First_Name',
             'Last_Name',
-            'Age',
+            'Date_of_Birth',
 
             'Mobile_Number',
             'Email',
@@ -61,7 +61,7 @@ class Profile_update_form(forms.ModelForm):
 
             'First_Name'                         :          forms.TextInput(attrs={'class':'form-control', 'placeholder':'Your First Name','onfocus': 'this.placeholder = ''','onblur': "this.placeholder = 'About Your organization'",}),
             'Last_Name'                          :          forms.TextInput(attrs={'class':'form-control', 'placeholder':'Your Last Name'}),
-            'Age'                                :          forms.TextInput(attrs={'class':'form-control', 'placeholder':'Your Age'}),
+            'Date_of_Birth'                                :          forms.TextInput(attrs={'class':'form-control', 'placeholder':'Your Date of Birth'}),
 
             'Mobile_Number'                     :           forms.TextInput(attrs={'class':'form-control', 'placeholder':'Your mobile number'}),
             'Email'                             :           forms.TextInput(attrs={'class':'form-control', 'placeholder':'Your email'}),

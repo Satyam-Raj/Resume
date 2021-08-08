@@ -18,7 +18,7 @@ class Professional(models.Model):
 
     First_Name          =                    models.CharField(max_length=100,null=True)
     Last_Name           =                    models.CharField(max_length=100,null=True)
-    Age                 =                    models.CharField(max_length=3,null=True)
+    Date_of_Birth                 =                    models.CharField(max_length=12,null=True)
     
 
     Mobile_Number       =                    models.CharField(max_length=10,null=True)

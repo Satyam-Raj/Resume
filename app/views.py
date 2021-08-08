@@ -166,11 +166,9 @@ def logout_view(request):
 def search_view(request):
 
     query = request.GET['query']
-    query_result = Professional.objects.get(user__username__contains=query)
+    query_result = Professional.objects.get(user__username__contains=query)      # use strict-contain for filtering based on only username 
     
-    
-    print(query)
-    print(query_result)
+
 
 
     context = {

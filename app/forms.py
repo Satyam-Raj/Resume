@@ -68,7 +68,7 @@ class Profile_update_form(forms.ModelForm):
             'Address'                           :           forms.TextInput(attrs={'class':'form-control', 'placeholder':'Your address'}),
 
             'Introduction'                      :           forms.Textarea(attrs={'class':'form-control', 'placeholder':'Introduce yourself','maxlength': '900'}),
-            'Currently_or_was_working_for'      :           forms.TextInput(attrs={'class':'form-control', 'placeholder':'For which company you are/were working for (This field is optional)'}),
+            'Currently_or_was_working_for'      :           forms.TextInput(attrs={'class':'form-control', 'placeholder':'Job Title | Company Name | Duration | Location (This field is optional)'}),
             'Description'                       :           forms.Textarea(attrs={'class':'form-control', 'placeholder':'It is ok to brag about your desingnation, promotions and achievements (This field is optional)', 'maxlength': '900',}),
 
 

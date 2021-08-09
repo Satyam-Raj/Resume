@@ -12,7 +12,7 @@
         <img style="max-width: 200px; max-height:200px;"  src="{{ user.professional.image.url }}" alt="image"> <br> <br>
         
         </div>
-        <p class="p-2  px-md-5"> <a style="color:blue; font-size:250%" class="profiles"> {{  user.professional.First_Name }} {{  user.professional.Last_Name }}</a> <br> {{  user.professional.Date_of_Birth }} <br> {{ user.professional.Mobile_Number }}<br><span class="container-sm">{{  user.professional.Email }} <br> <br> {{  user.professional.Address }} <br> </span> <br> Share profile :  http://127.0.0.1:8000/search?query={{ user.username }}  </p>
+        <p class="p-2  px-md-5"> <a style="color:blue; font-size:250%" class="profiles"> {{  user.professional.First_Name }} {{  user.professional.Last_Name }}</a> <br> {{  user.professional.Date_of_Birth }} <br> {{ user.professional.Mobile_Number }}<br><span class="container-sm">{{  user.professional.Email }} <br> <br> {{  user.professional.Address }} <br> </span> <br> Share your profile :  http://127.0.0.1:8000/search?query={{ user.username }}  </p>
         
         <p class="p-2">  <a class=" btn btn-primary " href="{% url 'edit_profile' %}">Edit Profile</a></p>
         

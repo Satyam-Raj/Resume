@@ -16,59 +16,59 @@ class Professional(models.Model):
 
 
 
-    First_Name          =                    models.CharField(max_length=100,null=True)
-    Last_Name           =                    models.CharField(max_length=100,null=True)
+    First_Name          =                    models.CharField(max_length=14,null=True)
+    Last_Name           =                    models.CharField(max_length=14,null=True)
     Date_of_Birth                 =                    models.CharField(max_length=12,null=True)
     
 
     Mobile_Number       =                    models.CharField(max_length=10,null=True)
-    Email               =                    models.CharField(max_length=100,null=True)
-    Address             =                    models.CharField(max_length=150,null=True)
+    Email               =                    models.CharField(max_length=90,null=True)
+    Address             =                    models.CharField(max_length=90,null=True)
 
 
     
     Introduction                 =       models.TextField(null=True)
-    Currently_or_was_working_for =       models.CharField(max_length=200, blank=True)
+    Currently_or_was_working_for =       models.CharField(max_length=115, blank=True)
     Description                  =       models.TextField(blank=True) 
 
 
-    First_Experience                                     =       models.CharField(max_length=250, blank=True)
+    First_Experience                                     =       models.CharField(max_length=115, blank=True)
     First_Experience_Description                         =       models.TextField(blank=True)
 
-    Second_Experience                                     =       models.CharField(max_length=250, blank=True)
+    Second_Experience                                     =       models.CharField(max_length=115, blank=True)
     Second_Experience_Description                         =       models.TextField(blank=True)
 
-    Third_Experience                                     =       models.CharField(max_length=250, blank=True)
+    Third_Experience                                     =       models.CharField(max_length=115, blank=True)
     Third_Experience_Description                         =       models.TextField(blank=True)
 
-    Fourth_Experience                                     =       models.CharField(max_length=250, blank=True)
+    Fourth_Experience                                     =       models.CharField(max_length=115, blank=True)
     Fourth_Experience_Description                         =       models.TextField(blank=True)
 
-    Fifth_Experience                                     =       models.CharField(max_length=250, blank=True)
+    Fifth_Experience                                     =       models.CharField(max_length=115, blank=True)
     Fifth_Experience_Description                         =       models.TextField(blank=True)
 
 
 
 
-    School                  =               models.CharField(max_length = 250,null=True)
+    School                  =               models.CharField(max_length = 115,null=True)
     School_Description      =               models.TextField(null=True)
 
-    College                 =               models.CharField(max_length = 250,null=True)
+    College                 =               models.CharField(max_length = 115,null=True)
     College_Description     =               models.TextField(null=True)
 
 
-    First_Skill         =       models.CharField(max_length=50,null=True)
-    Second_Skill        =       models.CharField(max_length =50,null=True)
-    Third_Skill        =       models.CharField(max_length =50,null=True)
-    Fourth_Skill         =       models.CharField(max_length=50, blank=True)
-    Fifth_Skill        =       models.CharField(max_length =50, blank=True)
-    Sixth_Skill         =       models.CharField(max_length=50, blank=True)
-    Seventh_Skill        =       models.CharField(max_length =50, blank=True)
+    First_Skill         =       models.CharField(max_length=140,null=True)
+    Second_Skill        =       models.CharField(max_length =140,null=True)
+    Third_Skill        =       models.CharField(max_length =140,null=True)
+    Fourth_Skill         =       models.CharField(max_length=140, blank=True)
+    Fifth_Skill        =       models.CharField(max_length =140, blank=True)
+    Sixth_Skill         =       models.CharField(max_length=140, blank=True)
+    Seventh_Skill        =       models.CharField(max_length =140, blank=True)
     
 
-    Fist_Language       =       models.CharField(max_length=100,null=True)
-    Second_Language       =       models.CharField(max_length=100, blank=True)
-    Third_Language       =       models.CharField(max_length=100, blank=True)
+    Fist_Language       =       models.CharField(max_length=140,null=True)
+    Second_Language       =       models.CharField(max_length=140, blank=True)
+    Third_Language       =       models.CharField(max_length=140, blank=True)
 
     def __str__(self):
         return f'{self.user.username} Profile'

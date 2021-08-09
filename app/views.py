@@ -127,7 +127,7 @@ def subscription_view(request):
 
 
 @login_required(login_url='index')
-def profile_view(request,username):
+def profile_view(request):
 
     
     return render(request, 'profile.html')
@@ -141,7 +141,7 @@ def profile_update_view(request):
         profile_form = Profile_update_form(request.POST, request.FILES, instance=request.user.professional)
         if profile_form.is_valid():
             profile_form.save()
-            return redirect('profile/<username>')
+            return redirect('profile')
 
     else:
         profile_form = Profile_update_form(instance=request.user.professional)

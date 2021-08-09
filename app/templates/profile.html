@@ -7,108 +7,100 @@
 
 
 
-    <div  style=" color: white;" class="d-flex justify-content-center row mx-md-n5">
-        <img style="max-width: 150px; max-height:150px" class="p-2" src="{{ user.professional.image.url }}" alt="image">
-        <div class="profiles" >
-        <p class="p-2  px-md-5">{{  user.professional.First_Name }} {{  user.professional.Last_Name }} <br> {{  user.professional.Date_of_Birth }} <br> {{ user.professional.Mobile_Number }} <br> {{  user.professional.Email }} <br> {{  user.professional.Address }} <br>  </p>
+    <div  style=" color: white;padding-left: 25%;padding-right: 25%;" class="d-flex justify-content-center row mx-md-n5 ">
+        <div class="p-2" style=" margin-top: 2%;">
+        <img style="max-width: 200px; max-height:200px;"  src="{{ user.professional.image.url }}" alt="image"> <br> <br>
+        
         </div>
-        <a class="p-2  " href="{% url 'edit_profile' %}">Edit Profile</a>
+        <p class="p-2  px-md-5"> <a style="color:blue; font-size:250%" class="profiles"> {{  user.professional.First_Name }} {{  user.professional.Last_Name }}</a> <br> {{  user.professional.Date_of_Birth }} <br> {{ user.professional.Mobile_Number }}<br><span class="container-sm">{{  user.professional.Email }} <br> <br> {{  user.professional.Address }} <br> </span> <br> Share profile :  http://127.0.0.1:8000/search?query={{ user.username }}  </p>
+        
+        <p class="p-2">  <a class=" btn btn-primary " href="{% url 'edit_profile' %}">Edit Profile</a></p>
+        
     </div>
 
-
+    
 
 <div style=" color: white;">
-    <!-- <div class="box">
-        <div class="content">
-            <img  src="{{ user.professional.image.url }}" alt="image">
-        </div>
-        
-        <div class="content">
-            <p>{{  user.professional.First_Name }}</p>
-            <p>{{  user.professional.Last_Name }}</p>
-            
-        </div>
-    </div> -->
+    
 
-
-    <div>        
+    <div class="container-fluid">        
         
 
-        <hr  style="width:40%; margin: auto; border-top: 1px solid rgb(67, 80, 255)">
+        <hr  style="width:50%; margin: auto; border-top: 1px solid rgb(67, 80, 255)">
 
         <br>
-        <p style="padding-left: 30%;color: orange;">Introduction:</p>
-        <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Introduction }}</p>
+        <p style="padding-left: 25%;color: orange; ">Introduction:</p>
+        <p style="padding-left: 25%;padding-right: 25%;" > {{  user.professional.Introduction }}</p>
 
         {% if user.professional.Currently_or_was_working_for %}
 
-            <p style="padding-left: 30%;color: orange;">Currently working or was working for:</p>
-            <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Currently_or_was_working_for }}</p>
+            <p style="padding-left: 25%;color: orange;">Currently working or was working for:</p>
+            <p style="padding-left: 25%;padding-right: 25%;" > {{  user.professional.Currently_or_was_working_for }}</p>
         
         
             {% if user.professional.Description %}
-                <p style="padding-left: 30%;color: orange;">Description:</p>
-                <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Description }}</p>
+                <p style="padding-left: 25%;color: orange;">Description:</p>
+                <p style="padding-left: 25%;padding-right: 25%;" > {{  user.professional.Description }}</p>
 
                
             {% endif %}
         {% endif %}
             
-        <hr  style="width:40%; margin: auto; border-top: 1px solid rgb(67, 80, 255)">
+        <hr  style="width:50%; margin: auto; border-top: 1px solid rgb(67, 80, 255)">
         <br>
 
         {% if user.professional.First_Experience %}
 
-            <p style="padding-left: 30%;color: orange;">First Experience:</p>
-            <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.First_Experience }}</p>
+            <p style="padding-left: 25%;color: orange;">First Experience:</p>
+            <p style="padding-left: 25%;padding-right: 25%;" > {{  user.professional.First_Experience }}</p>
 
             {% if user.professional.First_Experience_Description %}
 
-                <p style="padding-left: 30%;color: orange;"> Description:</p>
-                <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.First_Experience_Description }}</p>
+                <p style="padding-left: 25%;color: orange;"> Description:</p>
+                <p style="padding-left: 25%;padding-right: 25%;" > {{  user.professional.First_Experience_Description }}</p>
             
 
                 {% if user.professional.Second_Experience %}
-                    <p style="padding-left: 30%;color: orange;">Second Experience:</p>
-                    <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Second_Experience }}</p>
+                    <p style="padding-left: 25%;color: orange;">Second Experience:</p>
+                    <p style="padding-left: 25%;padding-right: 25%;" > {{  user.professional.Second_Experience }}</p>
                 
                     {% if user.professional.Second_Experience_Description %}
 
-                        <p style="padding-left: 30%;color: orange;">Description:</p>
-                        <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Second_Experience_Description }}</p>
+                        <p style="padding-left: 25%;color: orange;">Description:</p>
+                        <p style="padding-left: 25%;padding-right: 25%;" > {{  user.professional.Second_Experience_Description }}</p>
 
                     
 
                         {% if user.professional.Third_Experience %}
-                            <p style="padding-left: 30%;color: orange;">Third Experience:</p>
-                            <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Third_Experience }}</p>
+                            <p style="padding-left: 25%;color: orange;">Third Experience:</p>
+                            <p style="padding-left: 25%;padding-right: 25%;" > {{  user.professional.Third_Experience }}</p>
 
                             {% if user.professional.Third_Experience_Description %}
 
-                                <p style="padding-left: 30%;color: orange;">Description:</p>
-                                <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Third_Experience_Description }}</p>
+                                <p style="padding-left: 25%;color: orange;">Description:</p>
+                                <p style="padding-left: 25%;padding-right: 25%;" > {{  user.professional.Third_Experience_Description }}</p>
                         
 
                                 {% if user.professional.Fourth_Experience %}
 
-                                    <p style="padding-left: 30%;color: orange;">Fourth Experience:</p>
-                                    <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Fourth_Experience }}</p>
+                                    <p style="padding-left: 25%;color: orange;">Fourth Experience:</p>
+                                    <p style="padding-left: 25%;padding-right: 25%;" > {{  user.professional.Fourth_Experience }}</p>
 
                                     {% if user.professional.Fourth_Experience_Description %}
 
-                                        <p style="padding-left: 30%;color: orange;">Description:</p>
-                                        <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Fourth_Experience_Description }}</p>
+                                        <p style="padding-left: 25%;color: orange;">Description:</p>
+                                        <p style="padding-left: 25%;padding-right: 25%;" > {{  user.professional.Fourth_Experience_Description }}</p>
                                     
 
                                         {% if user.professional.Fifth_Experience %}
 
-                                            <p style="padding-left: 30%;color: orange;">Fifth Experience:</p>
-                                            <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Fifth_Experience }}</p>
+                                            <p style="padding-left: 25%;color: orange;">Fifth Experience:</p>
+                                            <p style="padding-left: 25%;padding-right: 25%;" > {{  user.professional.Fifth_Experience }}</p>
 
                                             {% if user.professional.Fifth_Experience_Description %}
 
-                                                <p style="padding-left: 30%;color: orange;">Description:</p>
-                                                <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Fifth_Experience_Description }}</p>
+                                                <p style="padding-left: 25%;color: orange;">Description:</p>
+                                                <p style="padding-left: 25%;padding-right: 25%;" > {{  user.professional.Fifth_Experience_Description }}</p>
 
                                                 
                                             {% endif %}
@@ -123,64 +115,63 @@
         {% endif %}
             
         
-        <hr  style="width:40%; margin: auto; border-top: 1px solid rgb(67, 80, 255)">
+        <hr  style="width:50%; margin: auto; border-top: 1px solid rgb(67, 80, 255)">
         <br>
             
 
         {% if user.professional.School %}
-            <p style="padding-left: 30%;color: orange;">School:</p>
-            <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.School }}</p>
+            <p style="padding-left: 25%;color: orange;">School:</p>
+            <p style="padding-left: 25%;padding-right: 25%;" > {{  user.professional.School }}</p>
 
             {% if user.professional.School_Description %}
 
-                <p style="padding-left: 30%;color: orange;">Description:</p>
-                <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.School_Description }}</p>
+                <p style="padding-left: 25%;color: orange;">Description:</p>
+                <p style="padding-left: 25%;padding-right: 25%;" > {{  user.professional.School_Description }}</p>
             {% endif %}
         {% endif %}
 
         {% if user.professional.College %}
 
-            <p style="padding-left: 30%;color: orange;">College:</p>
-            <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.College }}</p>
+            <p style="padding-left: 25%;color: orange;">College:</p>
+            <p style="padding-left: 25%;padding-right: 25%;" > {{  user.professional.College }}</p>
 
             {% if user.professional.College_Description %}
 
-                <p style="padding-left: 30%;color: orange;">Description:</p>
-                <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.College_Description }}</p>
+                <p style="padding-left: 25%;color: orange;">Description:</p>
+                <p style="padding-left: 25%;padding-right: 25%;" > {{  user.professional.College_Description }}</p>
 
                
             {% endif %}
         {% endif %}
 
 
-        <hr  style="width:40%; margin: auto; border-top: 1px solid rgb(67, 80, 255)">
+        <hr  style="width:50%; margin: auto; border-top: 1px solid rgb(67, 80, 255)">
         <br>
 
 
         {% if user.professional.First_Skill %}
-            <p style="padding-left: 30%;color: orange;">First Skill:</p>
-            <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.First_Skill }}</p>
+            <p> <span style="padding-left: 25%;color: orange;"> First Skill:</span> <span>{{  user.professional.First_Skill }}</span> </p>
 
             {% if user.professional.Second_Skill %}
 
-                <p style="padding-left: 30%;color: orange;">Second Skill:</p>
-                <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Second_Skill }}</p>
+                <p> <span style="padding-left: 25%;color: orange;"> Second Skill:</span> <span>{{  user.professional.Second_Skill }}</span> </p>
+
 
                     {% if user.professional.Third_Skill %}
 
-                        <p style="padding-left: 30%;color: orange;">Third Skill:</p>
-                        <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Third_Skill }}</p>
+                        <p> <span style="padding-left: 25%;color: orange;"> Third Skill:</span> <span>{{  user.professional.Third_Skill }}</span> </p>
+
 
                             {% if user.professional.Fourth_Skill %}
 
-                                <p style="padding-left: 30%;color: orange;">Fourth Skill:</p>
-                                <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Fourth_Skill }}</p>
+                                 <p> <span style="padding-left: 25%;color: orange;"> Fourth Skill:</span> <span>{{  user.professional.Fourth_Skill }}</span> </p>
+
 
                                 {% if user.professional.Fifth_Skill %}
 
-                                    <p style="padding-left: 30%;color: orange;">Fifth Skill:</p>
-                                    <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Fifth_Skill }}</p>
+                                    <p> <span style="padding-left: 25%;color: orange;"> Fifth Skill:</span> <span>{{  user.professional.Fifth_Skill }}</span> </p>
 
+                                    
                                     
                                 {% endif %}
                             {% endif %}
@@ -188,23 +179,21 @@
             {% endif %}
         {% endif %}
             
-        <hr  style="width:40%; margin: auto; border-top: 1px solid rgb(67, 80, 255)">
+        <hr  style="width:50%; margin: auto; border-top: 1px solid rgb(67, 80, 255)">
         <br>
             
 
         {% if user.professional.Fist_Language %}
-            <p style="padding-left: 30%;color: orange;">First Language:</p>
-            <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Fist_Language }}</p>
+            <p> <span style="padding-left: 25%;color: orange;"> First Language:</span> <span>{{  user.professional.Fist_Language }}</span> </p>
 
                 {% if user.professional.Second_Language %}
-
-                    <p style="padding-left: 30%;color: orange;">Second Language:</p>
-                    <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Second_Language }}</p>
+                    <p> <span style="padding-left: 25%;color: orange;"> Second Language:</span> <span>{{  user.professional.Second_Language }}</span> </p>
+                    
 
                     {% if user.professional.Third_Language %}
 
-                        <p style="padding-left: 30%;color: orange;">Third Language:</p>
-                        <p style="padding-left: 30%;padding-right: 30%;" > {{  user.professional.Third_Language }}</p>
+                        <p> <span style="padding-left: 25%;color: orange;"> Third Language:</span> <span>{{  user.professional.Third_Language }}</span> </p>
+                        
                     {% endif %}
                 {% endif %}
         {% endif %}

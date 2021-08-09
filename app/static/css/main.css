@@ -113,35 +113,6 @@ body {
   color: rgba(255, 255, 255, 0.747);
 }
 
-.box{
-  content: "";
-  clear: both;
-  display: table;
-  border:1px blue;
-  
-}
-
-.content {
-  float: left;
-  width: 33.33%;
-  margin-top:15%
-  
-}
-
-.content img{
-  margin-left: 1250%;
-  max-width:  150px;
-  max-height: 150px;
-  margin-bottom: 80%;
-  
-}
-
-.content p {
-  font-family: 'Aldrich', sans-serif;
-  font-size : 115%;
-  margin-left: 410%;
-}
-
 .profiles{
   font-family: 'Aldrich', sans-serif;
 

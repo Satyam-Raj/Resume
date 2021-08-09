@@ -11,7 +11,7 @@ urlpatterns = [
     path('contact', views.contact_view, name='contact'),
     path('subscription', views.subscription_view, name='subscription'),
     path('edit_profile', views.profile_update_view, name='edit_profile'),
-    path('profile/<username>', views.profile_view, name='profile'),
+    path('profile', views.profile_view, name='profile'),
     path('logout', views.logout_view, name='logout'),
     path('search', views.search_view, name='search'),
     

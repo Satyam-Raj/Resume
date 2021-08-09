@@ -26,6 +26,7 @@
             <div class="container-fluid">        
                 
 
+                <hr  class="horizontal_divider">
 
                 <br>
                 <p class="main_heading d-flex justify-content-center">Introduction</p>
@@ -219,13 +220,22 @@
 
         </div>
 
-{% else %}
+{% elif query_result|length < 1 %}
+
 
 <!-- <p class="heading"> Please Build Your Best Profile</p> -->
 
 <p class="main_heading d-flex justify-content-center">Profile does not exist.</p>
 
 
+{% else %}
+
+
+<p class="main_heading d-flex justify-content-center">Profile does not exist.</p>
+
+
+
+ 
 
 {% endif %}
 

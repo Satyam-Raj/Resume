@@ -17,16 +17,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Lakki+Reddyy&family=Fuggles&family=Indie+Flower&family=Aldrich&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Lakki+Reddyy&family=Fuggles&family=Indie+Flower&family=Aldrich&family=Nothing+You+Could+Do&family=Berkshire+Swash&family=Montserrat+Alternates:wght@200&family=Chakra+Petch:wght@300&display=swap"
     rel="stylesheet">
 
 
 
-  {% if title %}
-  <title>mine resume - {{ title }}</title>
-  {% else %}
   <title>mine resume</title>
-  {% endif %}
 </head>
 
 <body>
@@ -45,6 +41,7 @@
 
             {% if user.is_authenticated %}
             <img src="{% static 'images/logo.png' %}" style="margin-right: 5%; width: 33%;">
+            
             <a class="nav-item nav-link" href="{% url 'home' %}">Home</a>
             <a class="nav-item nav-link" href="{% url 'subscription' %}">Subscribe</a>
             
@@ -69,7 +66,7 @@
 
           </div>
           <!-- Navbar Right Side -->
-          <div class="navbar-nav">
+          <div class="navbar-nav mr-2">
 
             <a class="nav-item nav-link" href="{% url 'about' %}">About</a>
             <a class="nav-item nav-link mr-2" href="{% url 'contact' %}">Contact</a>
@@ -77,9 +74,22 @@
 
             {% if user.is_authenticated %}
 
-
+<!-- 
               <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
-              <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+              <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a> -->
+
+
+              <div class="dropdown ml-2">
+                <button class="btn btn-dark dropdown-toggle border border-primary mr-2 " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{user.username}}
+                </button>
+                <div class="dropdown-menu bg-dark mr-4 " aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item nav-item nav-link" href="{% url 'profile' %}">Profile</a>
+                  <a class="dropdown-item btn btn-primary nav-item nav-link" href="{% url 'edit_profile' %}">Edit Profile</a>
+                  <a class="dropdown-item nav-item nav-link " href="{% url 'logout' %}">Logout</a>
+
+                </div>
+              </div>
             {% else %}
 
 
@@ -204,6 +214,10 @@
     </div>
     </nav>
   </header>
+
+
+
+
 
 
 

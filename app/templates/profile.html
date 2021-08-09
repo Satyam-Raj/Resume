@@ -5,104 +5,111 @@
 {% block content %}
 
 
+{% if user.professional.First_Name %}
 
-
-    <div  style=" color: white;padding-left: 25%;padding-right: 25%;" class="d-flex justify-content-center row mx-md-n5 ">
-        <div class="p-2" style=" margin-top: 2%;">
-        <img style="max-width: 200px; max-height:200px;"  src="{{ user.professional.image.url }}" alt="image"> <br> <br>
-        
-        </div>
-        <p class="p-2  px-md-5"> <a style="color:blue; font-size:250%" class="profiles"> {{  user.professional.First_Name }} {{  user.professional.Last_Name }}</a> <br> {{  user.professional.Date_of_Birth }} <br> {{ user.professional.Mobile_Number }}<br><span class="container-sm">{{  user.professional.Email }} <br> <br> {{  user.professional.Address }} <br> </span> <br> Share your profile :  http://127.0.0.1:8000/search?query={{ user.username }}  </p>
-        
-        <p class="p-2">  <a class=" btn btn-primary " href="{% url 'edit_profile' %}">Edit Profile</a></p>
-        
-    </div>
-
-    
-
-<div style=" color: white;">
-    
-
-    <div class="container-fluid">        
-        
-
-        <hr  style="width:50%; margin: auto; border-top: 1px solid rgb(67, 80, 255)">
-
-        <br>
-        <p style="padding-left: 25%;color: orange; ">Introduction:</p>
-        <p style="padding-left: 25%;padding-right: 25%;" > {{  user.professional.Introduction }}</p>
-
-        {% if user.professional.Currently_or_was_working_for %}
-
-            <p style="padding-left: 25%;color: orange;">Currently working or was working for:</p>
-            <p style="padding-left: 25%;padding-right: 25%;" > {{  user.professional.Currently_or_was_working_for }}</p>
-        
-        
-            {% if user.professional.Description %}
-                <p style="padding-left: 25%;color: orange;">Description:</p>
-                <p style="padding-left: 25%;padding-right: 25%;" > {{  user.professional.Description }}</p>
-
-               
-            {% endif %}
-        {% endif %}
-            
-        <hr  style="width:50%; margin: auto; border-top: 1px solid rgb(67, 80, 255)">
-        <br>
-
-        {% if user.professional.First_Experience %}
-
-            <p style="padding-left: 25%;color: orange;">First Experience:</p>
-            <p style="padding-left: 25%;padding-right: 25%;" > {{  user.professional.First_Experience }}</p>
-
-            {% if user.professional.First_Experience_Description %}
-
-                <p style="padding-left: 25%;color: orange;"> Description:</p>
-                <p style="padding-left: 25%;padding-right: 25%;" > {{  user.professional.First_Experience_Description }}</p>
-            
-
-                {% if user.professional.Second_Experience %}
-                    <p style="padding-left: 25%;color: orange;">Second Experience:</p>
-                    <p style="padding-left: 25%;padding-right: 25%;" > {{  user.professional.Second_Experience }}</p>
+            <div class="d-flex justify-content-center row mx-md-n5 top_profile ">
+                <div class="p-2" style=" margin-top: 2%;">
+                <img class="profile_image_width" src="{{ user.professional.image.url }}" alt="image"> <br> <br>
                 
-                    {% if user.professional.Second_Experience_Description %}
+                </div>
+                <p class="p-2  px-md-5 intro"> <a style="color:blue;" class="profiles"> {{  user.professional.First_Name }} {{  user.professional.Last_Name }}</a> <br> {{  user.professional.Date_of_Birth }} <br> {{ user.professional.Mobile_Number }}<br><span class="container-sm">{{  user.professional.Email }} <br> <br> {{  user.professional.Address }} <br> </span> <br> Share your profile :  http://127.0.0.1:8000/search?query={{ user.username }}  </p>
+                
+                
+                
+            </div>
 
-                        <p style="padding-left: 25%;color: orange;">Description:</p>
-                        <p style="padding-left: 25%;padding-right: 25%;" > {{  user.professional.Second_Experience_Description }}</p>
+            
 
+        <div style=" color: white;">
+            
+
+            <div class="container-fluid">        
+                
+
+
+                <br>
+                <p class="main_heading d-flex justify-content-center">Introduction</p>
+                <hr class="horizontal_divider">   
+                <br>
+                <p class="lines" > {{  user.professional.Introduction }}</p>
+
+                {% if user.professional.Currently_or_was_working_for %}
+
+                    <p class="heading">Recent Job:</p>
+                    <p class="lines"> {{  user.professional.Currently_or_was_working_for }}</p>
+                
+
+                    {% if user.professional.Description %}
+                        <p class="heading">Description:</p>
+                        <p class="lines" > {{  user.professional.Description }}</p>
+
+                    {% endif %}
+
+                {% endif %}
+                    
+                
+                <br>
+
+                {% if user.professional.First_Experience %}
+                    <hr  class="horizontal_divider">
+                    <br>
+                    <p class="main_heading d-flex justify-content-center">Experience</p>
+                    <hr  class="horizontal_divider">
+                    <br>
+                    <p class="heading">1<sup>st</sup> Experience:</p>
+                    <p class="lines" > {{  user.professional.First_Experience }}</p>
+
+                    {% if user.professional.First_Experience_Description %}
+
+                        <p class="heading"> Description:</p>
+                        <p class="lines"> {{  user.professional.First_Experience_Description }}</p>
                     
 
-                        {% if user.professional.Third_Experience %}
-                            <p style="padding-left: 25%;color: orange;">Third Experience:</p>
-                            <p style="padding-left: 25%;padding-right: 25%;" > {{  user.professional.Third_Experience }}</p>
-
-                            {% if user.professional.Third_Experience_Description %}
-
-                                <p style="padding-left: 25%;color: orange;">Description:</p>
-                                <p style="padding-left: 25%;padding-right: 25%;" > {{  user.professional.Third_Experience_Description }}</p>
+                        {% if user.professional.Second_Experience %}
+                            <p class="heading">2<sup>nd</sup> Experience:</p>
+                            <p class="lines"> {{  user.professional.Second_Experience }}</p>
                         
+                            {% if user.professional.Second_Experience_Description %}
 
-                                {% if user.professional.Fourth_Experience %}
+                                <p class="heading">Description:</p>
+                                <p class="lines"> {{  user.professional.Second_Experience_Description }}</p>
 
-                                    <p style="padding-left: 25%;color: orange;">Fourth Experience:</p>
-                                    <p style="padding-left: 25%;padding-right: 25%;" > {{  user.professional.Fourth_Experience }}</p>
+                            
 
-                                    {% if user.professional.Fourth_Experience_Description %}
+                                {% if user.professional.Third_Experience %}
+                                    <p class="heading">3<sup>rd</sup> Experience:</p>
+                                    <p class="lines" > {{  user.professional.Third_Experience }}</p>
 
-                                        <p style="padding-left: 25%;color: orange;">Description:</p>
-                                        <p style="padding-left: 25%;padding-right: 25%;" > {{  user.professional.Fourth_Experience_Description }}</p>
-                                    
+                                    {% if user.professional.Third_Experience_Description %}
 
-                                        {% if user.professional.Fifth_Experience %}
+                                        <p class="heading">Description:</p>
+                                        <p class="lines" > {{  user.professional.Third_Experience_Description }}</p>
+                                
 
-                                            <p style="padding-left: 25%;color: orange;">Fifth Experience:</p>
-                                            <p style="padding-left: 25%;padding-right: 25%;" > {{  user.professional.Fifth_Experience }}</p>
+                                        {% if user.professional.Fourth_Experience %}
 
-                                            {% if user.professional.Fifth_Experience_Description %}
+                                            <p class="heading">4<sup>th</sup> Experience:</p>
+                                            <p class="lines" > {{  user.professional.Fourth_Experience }}</p>
 
-                                                <p style="padding-left: 25%;color: orange;">Description:</p>
-                                                <p style="padding-left: 25%;padding-right: 25%;" > {{  user.professional.Fifth_Experience_Description }}</p>
+                                            {% if user.professional.Fourth_Experience_Description %}
 
-                                                
+                                                <p class="heading">Description:</p>
+                                                <p class="lines" > {{  user.professional.Fourth_Experience_Description }}</p>
+                                            
+
+                                                {% if user.professional.Fifth_Experience %}
+
+                                                    <p class="heading">5<sup>th</sup> Experience:</p>
+                                                    <p class="lines" > {{  user.professional.Fifth_Experience }}</p>
+
+                                                    {% if user.professional.Fifth_Experience_Description %}
+
+                                                        <p class="heading">Description:</p>
+                                                        <p class="lines" > {{  user.professional.Fifth_Experience_Description }}</p>
+
+                                                        
+                                                    {% endif %}
+                                                {% endif %}
                                             {% endif %}
                                         {% endif %}
                                     {% endif %}
@@ -111,101 +118,123 @@
                         {% endif %}
                     {% endif %}
                 {% endif %}
-            {% endif %}
-        {% endif %}
-            
-        
-        <hr  style="width:50%; margin: auto; border-top: 1px solid rgb(67, 80, 255)">
-        <br>
-            
-
-        {% if user.professional.School %}
-            <p style="padding-left: 25%;color: orange;">School:</p>
-            <p style="padding-left: 25%;padding-right: 25%;" > {{  user.professional.School }}</p>
-
-            {% if user.professional.School_Description %}
-
-                <p style="padding-left: 25%;color: orange;">Description:</p>
-                <p style="padding-left: 25%;padding-right: 25%;" > {{  user.professional.School_Description }}</p>
-            {% endif %}
-        {% endif %}
-
-        {% if user.professional.College %}
-
-            <p style="padding-left: 25%;color: orange;">College:</p>
-            <p style="padding-left: 25%;padding-right: 25%;" > {{  user.professional.College }}</p>
-
-            {% if user.professional.College_Description %}
-
-                <p style="padding-left: 25%;color: orange;">Description:</p>
-                <p style="padding-left: 25%;padding-right: 25%;" > {{  user.professional.College_Description }}</p>
-
-               
-            {% endif %}
-        {% endif %}
-
-
-        <hr  style="width:50%; margin: auto; border-top: 1px solid rgb(67, 80, 255)">
-        <br>
-
-
-        {% if user.professional.First_Skill %}
-            <p> <span style="padding-left: 25%;color: orange;"> First Skill:</span> <span>{{  user.professional.First_Skill }}</span> </p>
-
-            {% if user.professional.Second_Skill %}
-
-                <p> <span style="padding-left: 25%;color: orange;"> Second Skill:</span> <span>{{  user.professional.Second_Skill }}</span> </p>
-
-
-                    {% if user.professional.Third_Skill %}
-
-                        <p> <span style="padding-left: 25%;color: orange;"> Third Skill:</span> <span>{{  user.professional.Third_Skill }}</span> </p>
-
-
-                            {% if user.professional.Fourth_Skill %}
-
-                                 <p> <span style="padding-left: 25%;color: orange;"> Fourth Skill:</span> <span>{{  user.professional.Fourth_Skill }}</span> </p>
-
-
-                                {% if user.professional.Fifth_Skill %}
-
-                                    <p> <span style="padding-left: 25%;color: orange;"> Fifth Skill:</span> <span>{{  user.professional.Fifth_Skill }}</span> </p>
-
-                                    
-                                    
-                                {% endif %}
-                            {% endif %}
-                    {% endif %}
-            {% endif %}
-        {% endif %}
-            
-        <hr  style="width:50%; margin: auto; border-top: 1px solid rgb(67, 80, 255)">
-        <br>
-            
-
-        {% if user.professional.Fist_Language %}
-            <p> <span style="padding-left: 25%;color: orange;"> First Language:</span> <span>{{  user.professional.Fist_Language }}</span> </p>
-
-                {% if user.professional.Second_Language %}
-                    <p> <span style="padding-left: 25%;color: orange;"> Second Language:</span> <span>{{  user.professional.Second_Language }}</span> </p>
+                    
+                
+                <br>
                     
 
-                    {% if user.professional.Third_Language %}
+                {% if user.professional.School %}
+                    <hr  class="horizontal_divider">
+                    <br>
+                    <p class="main_heading d-flex justify-content-center">Education</p>
+                    <hr  class="horizontal_divider">
+                    <br>
+                    <p class="heading">School:</p>
+                    <p class="lines" > {{  user.professional.School }}</p>
 
-                        <p> <span style="padding-left: 25%;color: orange;"> Third Language:</span> <span>{{  user.professional.Third_Language }}</span> </p>
-                        
+                    {% if user.professional.School_Description %}
+
+                        <p class="heading">Description:</p>
+                        <p class="lines" > {{  user.professional.School_Description }}</p>
                     {% endif %}
                 {% endif %}
-        {% endif %}
-        
+
+                {% if user.professional.College %}
+
+                    <p class="heading">College:</p>
+                    <p class="lines" > {{  user.professional.College }}</p>
+
+                    {% if user.professional.College_Description %}
+
+                        <p class="heading">Description:</p>
+                        <p class="lines" > {{  user.professional.College_Description }}</p>
+
+                    
+                    {% endif %}
+                {% endif %}
+
+
+                <br>
+
+
+                {% if user.professional.First_Skill %}
+                    <hr  class="horizontal_divider">
+                    <br>
+                    <p class="main_heading d-flex justify-content-center">Skills</p>
+                    <hr  class="horizontal_divider">
+                    <br>
+
+                    <p> <span class="heading"> 1<sup>st</sup>  Skill:</span> <span class="line">{{  user.professional.First_Skill }}</span> </p>
+
+                    {% if user.professional.Second_Skill %}
+
+                        <p> <span class="heading"> 2<sup>nd</sup> Skill:</span> <span class="line">{{  user.professional.Second_Skill }}</span> </p>
+
+
+                            {% if user.professional.Third_Skill %}
+
+                                <p> <span class="heading"> 3<sup>rd</sup> Skill:</span> <span class="line">{{  user.professional.Third_Skill }}</span> </p>
+
+
+                                    {% if user.professional.Fourth_Skill %}
+
+                                        <p> <span class="heading"> 4<sup>th</sup> Skill:</span> <span class="line">{{  user.professional.Fourth_Skill }}</span> </p>
+
+
+                                        {% if user.professional.Fifth_Skill %}
+
+                                            <p> <span class="heading"> 5<sup>th</sup> Skill:</span> <span class="line">{{  user.professional.Fifth_Skill }}</span> </p>
+
+                                            
+                                            
+                                        {% endif %}
+                                    {% endif %}
+                            {% endif %}
+                    {% endif %}
+                {% endif %}
+                    
+                <br>
+                    
+
+                {% if user.professional.Fist_Language %}
+                    <hr  class="horizontal_divider">
+                    <br>
+                    <p class="main_heading d-flex justify-content-center">Languages</p>
+                    <hr  class="horizontal_divider">
+                    <p> <span class="heading"> 1<sup>st</sup> Language:</span> <span class="line">{{  user.professional.Fist_Language }}</span> </p>
+
+                        {% if user.professional.Second_Language %}
+                            <p> <span class="heading"> 2<sup>nd</sup> Language:</span> <span class="line">{{  user.professional.Second_Language }}</span> </p>
+                            
+
+                            {% if user.professional.Third_Language %}
+
+                                <p> <span class="heading"> 3<sup>rd</sup> Language:</span> <span class="line">{{  user.professional.Third_Language }}</span> </p>
+                                
+                            {% endif %}
+                        {% endif %}
+                {% endif %}
+                
+            </div>
+
+        </div>
+
+{% else %}
+
+<!-- <p class="heading"> Please Build Your Best Profile</p> -->
+
+
+<div class="base">
+    <div class="holder"></div>
+    <div class="thread">
+      <div class="knob"></div>
+      <div class="pendulum">Please Build Profile</div>
     </div>
-
-</div>
-
-
+    <div class="shadow"></div>
+  </div>	
 
 
-
+{% endif %}
 
 
 

@@ -9,12 +9,18 @@ body {
 }
 
 .site-header .navbar-nav .nav-link {
-  color: #cbd5db;
+  color: #cbd5dbc9;
 }
 
 .site-header .navbar-nav .nav-link:hover {
-  color: rgba(255, 98, 0, 0.692);
+  color: rgba(255, 255, 255, 0.753);
 }
+
+.logo{
+  color: #cbd5db;
+  font-family: 'Nothing You Could Do', cursive;
+}
+
 
 .column {
   float: left;
@@ -115,8 +121,169 @@ body {
 
 .profiles{
   font-family: 'Aldrich', sans-serif;
+  color:rgb(67, 80, 255); 
+  font-size:250%;
 
 }
+
+.intro{
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+.main_heading{
+  font-family: 'Berkshire Swash', cursive;
+  color: orange;
+  font-size: 140%;
+}
+
+
+
+.heading{
+  font-family: 'Berkshire Swash', cursive;
+  padding-left: 25%;
+  color: rgb(67, 80, 255);
+  font-size: 125%;
+}
+
+.lines{
+  font-family: 'Montserrat Alternates', sans-serif;
+  padding-left: 25%;
+  padding-right: 25%;
+}
+.line{
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+
+
+.horizontal_divider{
+
+  width:50%;
+  margin: auto;
+  border-top: 1px solid rgb(67, 80, 255)
+}
+
+.top_profile{
+  color: white;
+  padding-left: 25%;
+  padding-right: 25%;
+}
+
+.profile_image_width{
+  max-width: 200px;
+   max-height:200px;
+}
+
+
+
+
+
+/* from here animation section begins for new user in profile-page who just joined but not built profile */
+
+.base {
+  width: 500px;
+  border-top: 5px solid gray;
+  margin: auto;
+  text-align: center;
+  position: relative;
+  padding: 0 0 30px;
+}
+
+.holder {
+  width: 30px;
+  height: 20px;
+  background: black;
+  margin: auto;
+  border-radius: 0 0 50% 50%;
+}
+
+.thread {
+  display: inline-block;
+  width: 2px;
+  height: 200px;
+  background: black;
+  border-radius: 5px;
+  position: relative;
+  transform-origin: 50% 0;
+  animation: moveIt 2.5s ease-in-out infinite;
+}
+
+.thread:after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: red;
+  border: 2px solid white;
+  top: -4.5px;
+  left: -3.5px;
+}
+
+.knob {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: -18px;
+  left: -4.5px;
+  border: 2px solid rgba(255, 255, 255, .5);
+  border-radius: 50%;
+  border-bottom: 2px solid transparent;
+}
+
+.pendulum {
+   width: 160px;
+  background: -moz-radial-gradient(circle at 70% 35%, white, #66d63e 30%, #40a31d 50%);
+  background: -webkit-radial-gradient(circle at 70% 35%, white, #66d63e 30%, #40a31d 50%);
+  background: -o-radial-gradient(circle at 70% 35%, white, #66d63e 30%, #40a31d 50%);
+  background: -ms-radial-gradient(circle at 70% 35%, white, #66d63e 30%, #40a31d 50%);
+  background: radial-gradient(circle at 70% 35%, white, #66d63e 30%, #40a31d 50%);
+    border-radius: 10%;
+    position: absolute;
+    bottom: -37px;
+    left: -77px;
+    font-size: 20px;
+    padding: 10px 20px;
+}
+
+.shadow {
+  width: 30px;
+  height: 15px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  margin: 50px auto 0;
+  animation: moveShade 1.25s ease-in-out alternate infinite;
+}
+
+@keyframes moveIt {
+  0%, 100% {
+    transform: rotate(45deg);
+  }
+  50% {
+    transform: rotate(-45deg);
+  }
+}
+
+@keyframes moveShade {
+  0% {
+    transform: translateX(-220px) scale(1.4, .5);
+    filter: blur(20px);
+  }
+  50% {
+    filter: blur(3px);
+  }
+  100% {
+    transform: translateX(220px) scale(1.4, .5);
+    filter: blur(20px);
+  }
+}
+
+
+/* till here animation section, for new user in profile-page who just joined but not built profile */
+
+
+
+
 
 
 
@@ -185,4 +352,5 @@ body {
   width: 33.33%;
    padding: 5px;
 }  */
+
 

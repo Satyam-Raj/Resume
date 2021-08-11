@@ -146,12 +146,17 @@ body {
 }
 
 .lines{
-  font-family: 'Montserrat Alternates', sans-serif;
+  /* font-family: 'Flamenco', cursive; */
+  /* font-size: 125%; */
   padding-left: 25%;
   padding-right: 25%;
+  color: rgb(233, 233, 233);
 }
 .line{
-  font-family: 'Montserrat Alternates', sans-serif;
+  /* font-family: 'Montserrat Alternates', sans-serif; */
+  font-size: 100%;
+  color: rgb(233, 233, 233);
+
 }
 
 

@@ -26,7 +26,7 @@ def login_view(request):
         if user is not None:
             login(request, user)
             messages.success(request, "Successfully signed in")
-            return redirect('home')
+            return redirect('profile')
 
         else:
             messages.error(request, "Invalid Credentials")
@@ -61,14 +61,33 @@ def register_view(request):
             messages.error(request,"Please fill the First Name")
             return redirect('index')
 
+        if len(fname)>20:
+            messages.error(request,"Please keep First Name under 20 characters.")
+            return redirect('index')
+
         if len(lname)==0:
             messages.error(request,"Please fill the Last Name")
+            return redirect('index')
+
+        if len(lname)>20:
+            messages.error(request,"Please keep Last Name under 20 characters.")
             return redirect('index')
 
         if len(email)==0:
             messages.error(request,"Please fill the email")
             return redirect('index')
 
+        if len(email)>80:
+            messages.error(request,"Please keep email address shorter")
+            return redirect('index')
+
+        if len(pass1)>100:
+            messages.error(request,"Please keep password shorter to remember.")
+            return redirect('index')
+
+        if len(pass1)==0:
+            messages.error(request,"Please fill password.")
+            return redirect('index')
 
         if not username.isalnum():
             messages.error(request, "Username consists of alphabet and numbers only")
@@ -121,6 +140,7 @@ def contact_view(request):
 
 @login_required(login_url='index')
 def subscription_view(request):
+
     return render(request, 'subscription.html')
 
 
@@ -133,13 +153,14 @@ def profile_view(request):
     return render(request, 'profile.html')
 
 
-
+import os
 @login_required(login_url='index')
 def profile_update_view(request):
 
     if request.method =='POST':
         profile_form = Profile_update_form(request.POST, request.FILES, instance=request.user.professional)
         if profile_form.is_valid():
+
             profile_form.save()
             return redirect('profile')
 
@@ -166,15 +187,27 @@ def logout_view(request):
 def search_view(request):
 
     query = request.GET['query']
-    query_result = Professional.objects.get(user__username__contains=query)      # use strict-contain for filtering based on only username 
     
+    if len(query)>11:
+        messages.warning(request, "Please type correct username")
+        return redirect('profile')
 
-    
+        
+    else:
+        if Professional.objects.get(user__username__icontains=query)> 1:
+            messages.warning(request, "Please type correct username")
+
+
+        else:
+             query_result = Professional.objects.get(user__username__icontains=query)      # use strict-contain for filtering based on only username 
+
+
+
 
     context = {
-        'query':query,
-        'query_result':query_result,
-    }
+            'query':query,
+            'query_result':query_result,
+        }
 
     return render(request, 'search.html',context)
     

@@ -95,11 +95,11 @@ class Profile_update_form(forms.ModelForm):
             'College_Description'               :           forms.Textarea(attrs={'class':'form-control', 'placeholder':'Write the description','maxlength': '900'}),
 
 
-            'First_Skill'                       :           forms.TextInput(attrs={'class':'form-control', 'placeholder':'Skill One'}),
-            'Second_Skill'                      :           forms.TextInput(attrs={'class':'form-control', 'placeholder':'Skill two'}),
-            'Third_Skill'                       :           forms.TextInput(attrs={'class':'form-control', 'placeholder':'Skill three'}),
-            'Fourth_Skill'                      :           forms.TextInput(attrs={'class':'form-control', 'placeholder':'Skill four (This field is optional)'}),
-            'Fifth_Skill'                       :           forms.TextInput(attrs={'class':'form-control', 'placeholder':'Skill five (This field is optional)'}),
+            'First_Skill'                       :           forms.TextInput(attrs={'class':'form-control', 'placeholder':'Category - Skill | Skill | Skill'}),
+            'Second_Skill'                      :           forms.TextInput(attrs={'class':'form-control', 'placeholder':'Frontend - HTML | CSS | JavaScript'}),
+            'Third_Skill'                       :           forms.TextInput(attrs={'class':'form-control', 'placeholder':'Timepass - Sleep | Eat | Sleep'}),
+            'Fourth_Skill'                      :           forms.TextInput(attrs={'class':'form-control', 'placeholder':'Category - Skill | Skill | Skill (This field is optional)'}),
+            'Fifth_Skill'                       :           forms.TextInput(attrs={'class':'form-control', 'placeholder':'Category - Skill | Skill | Skill (This field is optional)'}),
             # 'Sixth_Skill'                       :           forms.TextInput(attrs={'class':'form-control', 'placeholder':'Skill six (This field is optional)'}),
             # 'Seventh_Skill'                     :           forms.TextInput(attrs={'class':'form-control', 'placeholder':'Skill seven (This field is optional)'}),
 

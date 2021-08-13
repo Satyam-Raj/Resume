@@ -184,25 +184,30 @@ def logout_view(request):
     return redirect('index')
 
 
-def search_view(request):
 
+def search_view(request):
     query = request.GET['query']
     
     if len(query)>10:
         messages.warning(request, "Please type correct username")
         return redirect('profile')
-
         
     else:
         
-        query_result = Professional.objects.get(user__username__icontains=query)      # use strict-contain for filtering based on only username 
+        # query_result = Professional.objects.get(user__username__icontains=query)      # use strict-contain for filtering based on only username 
+       
+        q            = Professional.objects.filter(user__username__icontains=query).order_by()
 
+    if q.count()==0:
+        messages.warning(request, "Please type correct username")
+        return redirect('profile')
+        
+    print(query)
 
-
-    print(query_result)
     context = {
             'query':query,
-            'query_result':query_result,
+            # 'query_result':query_result,
+            'q':q,
         }
 
     return render(request, 'search.html',context)
@@ -210,3 +215,17 @@ def search_view(request):
 
 
 
+
+
+
+def profile_search_view(request):
+
+    people = request.GET['satyamraj']
+    query_result = Professional.objects.get(people)      # use strict-contain for filtering based on only username 
+
+    context = {
+            'query_result':query_result,
+        }
+
+
+    return render(request, 'profile_search.html',context)

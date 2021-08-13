@@ -40,8 +40,8 @@ def login_view(request):
 
 def register_view(request):
     if request.method == "POST":
-        username=request.POST['username']
-        email=request.POST['email']
+        username=request.POST['username'].lower()
+        email=request.POST['email'].lower()
         fname=request.POST['fname']
         lname=request.POST['lname']
         pass1=request.POST['pass1']
@@ -188,22 +188,18 @@ def search_view(request):
 
     query = request.GET['query']
     
-    if len(query)>11:
+    if len(query)>10:
         messages.warning(request, "Please type correct username")
         return redirect('profile')
 
         
     else:
-        if Professional.objects.get(user__username__icontains=query)> 1:
-            messages.warning(request, "Please type correct username")
-
-
-        else:
-             query_result = Professional.objects.get(user__username__icontains=query)      # use strict-contain for filtering based on only username 
+        
+        query_result = Professional.objects.get(user__username__icontains=query)      # use strict-contain for filtering based on only username 
 
 
 
-
+    print(query_result)
     context = {
             'query':query,
             'query_result':query_result,

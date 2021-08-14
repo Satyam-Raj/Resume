@@ -10,7 +10,7 @@
 
     <div>
 
-    <p class="main_heading" type= "text" action='profile_search' name="{{ v.user }}" id="{{ v.user }}" value = "{{ request.GET.v.user}}"> <a href="{% url 'profile_search' %}"> {{  v.First_Name }} {{  v.user }} </a> </p>
+    <p class="main_heading" > <a href="{% url 'profile_search' v.pk %}"> {{  v.First_Name }} {{  v.user }} </a> </p>
 
     </div>
 {% endfor %}

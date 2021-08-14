@@ -14,7 +14,7 @@ urlpatterns = [
     path('profile', views.profile_view, name='profile'),
     path('logout', views.logout_view, name='logout'),
     path('search', views.search_view, name='search'),
-    path('profile_search', views.profile_search_view, name='profile_search'),
+    path('profile_search/<int:pk>', views.Profile_search_view.as_view(), name='profile_search'),
 
     
 ]

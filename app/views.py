@@ -5,6 +5,8 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
+from django.views.generic.detail import DetailView
+
 
 @login_required(login_url='index')
 def home_view(request):
@@ -215,17 +217,8 @@ def search_view(request):
 
 
 
-
-
-
-def profile_search_view(request):
-
-    # people = request.GET['id']
-    query_result = Professional.objects.get(user__username__icontains='satyamraj')     
-
-    context = {
-            'query_result':query_result,
-        }
-
-
-    return render(request, 'profile_search.html',context)
+class Profile_search_view(DetailView):
+    model = Professional
+    template_name = 'profile_search.html'
+    context_object_name = 'query_result'
+    pk_url_kwargs = 'pk'

@@ -179,8 +179,23 @@ body {
    max-height:200px;
 }
 
+.search{
+  padding-left: 27%;
+}
+
+.search_text_align{
+  font-family: 'Berkshire Swash', cursive;
+  color: orange;
+  padding-right: 15%;
+}
 
 
+
+.search_profile_image_width{
+  max-width: 120px;
+  max-height:120px;
+  padding: 1%;
+}
 
 
 /* from here animation section begins for new user in profile-page who just joined but not built profile */

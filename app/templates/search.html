@@ -6,18 +6,22 @@
 
 
 
-{% for v in q %}
+{% for value in query_filter %}
+    {% if value.First_Name %}
+        <div class="container ">
+        <div class=" search">
 
-    <div>
+        <p class="main_heading " > <a href="{% url 'profile_search' value.pk %}"> <img class="search_profile_image_width border border-dark" src="{{ value.image.url }}" alt="image"> <span class="search_text_align"> {{  value.First_Name }} {{  value.Last_Name }}  ({{  value.user }})</span> </a>  </p>
 
-    <p class="main_heading" > <a href="{% url 'profile_search' v.pk %}"> {{  v.First_Name }} {{  v.user }} </a> </p>
+        </div>
+        </div>
 
-    </div>
+     
+    {% endif %}
+
+
+
 {% endfor %}
-
-
-
-
 
 
 

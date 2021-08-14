@@ -194,13 +194,10 @@ def search_view(request):
         messages.warning(request, "Please type correct username")
         return redirect('profile')
         
-    else:
-        
-        # query_result = Professional.objects.get(user__username__icontains=query)      # use strict-contain for filtering based on only username 
-       
-        q  = Professional.objects.filter(user__username__icontains=query).order_by()
+    else:       
+        query_filter  = Professional.objects.filter(user__username__icontains=query).order_by()
 
-    if q.count()==0:
+    if query_filter.count()==0:
         messages.warning(request, "Please type correct username")
         return redirect('profile')
         
@@ -208,8 +205,7 @@ def search_view(request):
 
     context = {
             'query':query,
-            # 'query_result':query_result,
-            'q':q,
+            'query_filter':query_filter,
         }
 
     return render(request, 'search.html',context)

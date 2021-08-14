@@ -186,7 +186,6 @@ def logout_view(request):
     return redirect('index')
 
 
-
 def search_view(request):
     query = request.GET['query']
     
@@ -210,7 +209,6 @@ def search_view(request):
 
     return render(request, 'search.html',context)
     
-
 
 
 class Profile_search_view(DetailView):

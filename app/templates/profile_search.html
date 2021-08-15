@@ -4,114 +4,114 @@
 
 
 
-
-
-
-
 {% if query_result.First_Name %}
 
-<div class="d-flex justify-content-center row mx-md-n5 top_profile ">
-    <div class="p-2" style=" margin-top: 2%;">
-    <img class="profile_image_width" src="{{ query_result.image.url }}" alt="image"> <br> <br>
-    
-    </div>
-    <p class="p-2  px-md-5 intro"> <a style="color:blue;" class="profiles"> {{  query_result.First_Name }} {{  query_result.Last_Name }}</a> <br> {{  query_result.Date_of_Birth }} <br> {{ query_result.Mobile_Number }}<br><span class="container-sm">{{  query_result.Email }} <br> <br> {{  query_result.Address }} <br> </span> </p>
-    
-    
-    
-</div>
+            <div class="d-flex justify-content-center row mx-md-n5 top_profile ">
+                <div class="p-2" style=" margin-top: 2%;">
+                <img class="profile_image_width" src="{{ query_result.image.url }}" alt="image"> <br> <br>
+                
+                </div>
+                <p class="p-2  px-md-5 intro"> <a style="color:blue;" class="profiles"> {{  query_result.First_Name }} {{  query_result.Last_Name }}</a> <br> {{  query_result.Date_of_Birth }} <br> {{ query_result.Mobile_Number }}<br><span class="container-sm">{{  query_result.Email }} <br> <br> {{  query_result.Regional_place }}, {{  query_result.City }}, {{  query_result.State }}, {{  query_result.Country }} <br> </span> <br> Share your profile : http://127.0.0.1:8000/search?query={{ user.username }}  </p>
+                
+                
+                
+            </div>
 
-
-
-<div style=" color: white;">
-
-
-<div class="container-fluid">        
-    
-
-    <hr  class="horizontal_divider">
-
-    <br>
-    <p class="main_heading d-flex justify-content-center">Introduction</p>
-    <hr class="horizontal_divider">   
-    <br>
-    <p class="lines" > {{  query_result.Introduction }}</p>
-
-    {% if query_result.Currently_or_was_working_for %}
-
-        <p class="heading">Recent Job:</p>
-        <p class="lines"> {{  query_result.Currently_or_was_working_for }}</p>
-    
-
-        {% if query_result.Description %}
-            <p class="heading">Description:</p>
-            <p class="lines" > {{  query_result.Description }}</p>
-
-        {% endif %}
-
-    {% endif %}
-        
-    
-    <br>
-
-    {% if query_result.First_Experience %}
-        <hr  class="horizontal_divider">
-        <br>
-        <p class="main_heading d-flex justify-content-center">Experience</p>
-        <hr  class="horizontal_divider">
-        <br>
-        <p class="heading">1<sup>st</sup> Experience:</p>
-        <p class="lines" > {{  query_result.First_Experience }}</p>
-
-        {% if query_result.First_Experience_Description %}
-
-            <p class="heading"> Description:</p>
-            <p class="lines"> {{  query_result.First_Experience_Description }}</p>
-        
-
-            {% if query_result.Second_Experience %}
-                <p class="heading">2<sup>nd</sup> Experience:</p>
-                <p class="lines"> {{  query_result.Second_Experience }}</p>
             
-                {% if query_result.Second_Experience_Description %}
 
-                    <p class="heading">Description:</p>
-                    <p class="lines"> {{  query_result.Second_Experience_Description }}</p>
+        <div style=" color: white;">
+            
 
+            <div class="container-fluid">        
                 
 
-                    {% if query_result.Third_Experience %}
-                        <p class="heading">3<sup>rd</sup> Experience:</p>
-                        <p class="lines" > {{  query_result.Third_Experience }}</p>
 
-                        {% if query_result.Third_Experience_Description %}
+                <hr  class="horizontal_divider">
+                <br>
 
-                            <p class="heading">Description:</p>
-                            <p class="lines" > {{  query_result.Third_Experience_Description }}</p>
+                <p class="main_heading d-flex justify-content-center">Introduction</p>
+                <hr class="horizontal_divider">   
+                <br>
+                <p class="lines" > {{  query_result.Introduction }}</p>
+                <br>
+                {% if query_result.Job_Title %}
+
+                    <p class="heading">Recent Job:</p>
+                    <p class="lines"> {{  query_result.Job_Title }} | {{  query_result.Company_Name }} | {{  query_result.Locaton }} | {{  query_result.Duration }}</p>
+                
+
+                    {% if query_result.Description %}
+                        <p class="heading">Description:</p>
+                        <p class="lines" > {{  query_result.Description }}</p>
+
+                    {% endif %}
+
+                {% endif %}
                     
+                
+                <br>
 
-                            {% if query_result.Fourth_Experience %}
+                {% if query_result.First_Experience_Job_Title %}
+                    <hr  class="horizontal_divider">
+                    <br>
+                    <p class="main_heading d-flex justify-content-center">Experience</p>
+                    <hr  class="horizontal_divider">
+                    <br>
+                    <p class="heading">1<sup>st</sup> Experience:</p>
+                    <p class="lines" > {{  query_result.First_Experience_Job_Title }} | {{  query_result.First_Exp_Company_Name }} | {{  query_result.First_Exp_Company_Location }} | {{  query_result.First_Exp_Company_Duration }}</p>
 
-                                <p class="heading">4<sup>th</sup> Experience:</p>
-                                <p class="lines" > {{  query_result.Fourth_Experience }}</p>
+                    {% if query_result.First_Experience_Description %}
 
-                                {% if query_result.Fourth_Experience_Description %}
+                        <p class="heading"> Description:</p>
+                        <p class="lines"> {{  query_result.First_Experience_Description }}</p>
+                        <br>
 
-                                    <p class="heading">Description:</p>
-                                    <p class="lines" > {{  query_result.Fourth_Experience_Description }}</p>
+                        {% if query_result.Second_Experience_Job_Title %}
+                            <p class="heading">2<sup>nd</sup> Experience:</p>
+                            <p class="lines"> {{  query_result.Second_Experience_Job_Title }} |  {{  query_result.Second_Exp_Company_Name }} |  {{  query_result.Second_Exp_Company_Location }} |  {{  query_result.Second_Exp_Company_Duration }}</p>
+                        
+                            {% if query_result.Second_Experience_Description %}
+
+                                <p class="heading">Description:</p>
+                                <p class="lines"> {{  query_result.Second_Experience_Description }}</p>
+
+                                <br>
+
+                                {% if query_result.Third_Experience_Job_Title %}
+                                    <p class="heading">3<sup>rd</sup> Experience:</p>
+                                    <p class="lines" > {{  query_result.Third_Experience_Job_Title }} | {{  query_result.Third_Exp_Company_Name }} | {{  query_result.Third_Exp_Company_Location }} | {{  query_result.Third_Exp_Company_Duration }}</p>
+
+                                    {% if query_result.Third_Experience_Description %}
+
+                                        <p class="heading">Description:</p>
+                                        <p class="lines" > {{  query_result.Third_Experience_Description }}</p>
                                 
+                                        <br>
+                                        {% if query_result.Fourth_Experience_Job_Title %}
 
-                                    {% if query_result.Fifth_Experience %}
+                                            <p class="heading">4<sup>th</sup> Experience:</p>
+                                            <p class="lines" > {{  query_result.Fourth_Experience_Job_Title }} | {{  query_result.Fourth_Exp_Company_Name }} | {{  query_result.Fourth_Exp_Company_Location }} | {{  query_result.Fourth_Exp_Company_Duration }}</p>
 
-                                        <p class="heading">5<sup>th</sup> Experience:</p>
-                                        <p class="lines" > {{  query_result.Fifth_Experience }}</p>
+                                            {% if query_result.Fourth_Experience_Description %}
 
-                                        {% if query_result.Fifth_Experience_Description %}
-
-                                            <p class="heading">Description:</p>
-                                            <p class="lines" > {{  query_result.Fifth_Experience_Description }}</p>
-
+                                                <p class="heading">Description:</p>
+                                                <p class="lines" > {{  query_result.Fourth_Experience_Description }}</p>
                                             
+                                                <br>
+                                                {% if query_result.Fifth_Experience_Job_Title %}
+
+                                                    <p class="heading">5<sup>th</sup> Experience:</p>
+                                                    <p class="lines" > {{  query_result.Fifth_Experience_Job_Title }} | {{  query_result.Fifth_Exp_Company_Name }} | {{  query_result.Fifth_Exp_Company_Location }} | {{  query_result.Fifth_Exp_Company_Duration }}</p>
+
+                                                    {% if query_result.Fifth_Experience_Description %}
+
+                                                        <p class="heading">Description:</p>
+                                                        <p class="lines" > {{  query_result.Fifth_Experience_Description }}</p>
+
+                                                        
+                                                    {% endif %}
+                                                {% endif %}
+                                            {% endif %}
                                         {% endif %}
                                     {% endif %}
                                 {% endif %}
@@ -119,117 +119,111 @@
                         {% endif %}
                     {% endif %}
                 {% endif %}
-            {% endif %}
-        {% endif %}
-    {% endif %}
-        
-    
-    <br>
-        
+                    
+                
+                <br>
+                    
 
-    {% if query_result.School %}
-        <hr  class="horizontal_divider">
-        <br>
-        <p class="main_heading d-flex justify-content-center">Education</p>
-        <hr  class="horizontal_divider">
-        <br>
-        <p class="heading">School:</p>
-        <p class="lines" > {{  query_result.School }}</p>
+                {% if query_result.School_Name %}
+                    <hr  class="horizontal_divider">
+                    <br>
+                    <p class="main_heading d-flex justify-content-center">Education</p>
+                    <hr  class="horizontal_divider">
+                    <br>
+                    <p class="heading">School:</p>
+                    <p class="lines" > {{  query_result.Board }} | {{  query_result.School_Name }} | {{  query_result.School_Location }} | {{  query_result.School_Duration }}</p>
 
-        {% if query_result.School_Description %}
+                    {% if query_result.School_Description %}
 
-            <p class="heading">Description:</p>
-            <p class="lines" > {{  query_result.School_Description }}</p>
-        {% endif %}
-    {% endif %}
+                        <p class="heading">Description:</p>
+                        <p class="lines" > {{  query_result.School_Description }}</p>
+                    {% endif %}
+                {% endif %}
+                <br>
+                {% if query_result.College_Name %}
 
-    {% if query_result.College %}
+                    <p class="heading">College:</p>
+                    <p class="lines" > {{  query_result.Specialization }} | {{  query_result.College_Name }} | {{  query_result.College_Location }} | {{  query_result.College_Duration }}</p>
 
-        <p class="heading">College:</p>
-        <p class="lines" > {{  query_result.College }}</p>
+                    {% if query_result.College_Description %}
 
-        {% if query_result.College_Description %}
+                        <p class="heading">Description:</p>
+                        <p class="lines" > {{  query_result.College_Description }}</p>
 
-            <p class="heading">Description:</p>
-            <p class="lines" > {{  query_result.College_Description }}</p>
-
-        
-        {% endif %}
-    {% endif %}
+                    
+                    {% endif %}
+                {% endif %}
 
 
-    <br>
+                <br>
 
 
-    {% if query_result.First_Skill %}
-        <hr  class="horizontal_divider">
-        <br>
-        <p class="main_heading d-flex justify-content-center">Skills</p>
-        <hr  class="horizontal_divider">
-        <br>
+                {% if query_result.First_Skill %}
+                    <hr  class="horizontal_divider">
+                    <br>
+                    <p class="main_heading d-flex justify-content-center">Skills</p>
+                    <hr  class="horizontal_divider">
+                    <br>
 
-        <p> <span class="heading"> 1<sup>st</sup>  Skill:</span> <span class="line">{{  query_result.First_Skill }}</span> </p>
+                    <p> <span class="heading"> 1<sup>st</sup>  Skill:</span> <span class="line">{{  query_result.First_Skill_category }} - {{  query_result.First_Skill }}</span> </p>
 
-        {% if query_result.Second_Skill %}
+                    {% if query_result.Second_Skill %}
 
-            <p> <span class="heading"> 2<sup>nd</sup> Skill:</span> <span class="line">{{  query_result.Second_Skill }}</span> </p>
-
-
-                {% if query_result.Third_Skill %}
-
-                    <p> <span class="heading"> 3<sup>rd</sup> Skill:</span> <span class="line">{{  query_result.Third_Skill }}</span> </p>
+                        <p> <span class="heading"> 2<sup>nd</sup> Skill:</span> <span class="line">{{  query_result.Second_Skill_category }} - {{  query_result.Second_Skill }}</span> </p>
 
 
-                        {% if query_result.Fourth_Skill %}
+                            {% if query_result.Third_Skill %}
 
-                            <p> <span class="heading"> 4<sup>th</sup> Skill:</span> <span class="line">{{  query_result.Fourth_Skill }}</span> </p>
+                                <p> <span class="heading"> 3<sup>rd</sup> Skill:</span> <span class="line">{{  query_result.Third_Skill_category }} - {{  query_result.Third_Skill }}</span> </p>
 
 
-                            {% if query_result.Fifth_Skill %}
+                                    {% if query_result.Fourth_Skill %}
 
-                                <p> <span class="heading"> 5<sup>th</sup> Skill:</span> <span class="line">{{  query_result.Fifth_Skill }}</span> </p>
+                                        <p> <span class="heading"> 4<sup>th</sup> Skill:</span> <span class="line">{{  query_result.Fourth_Skill_category }} - {{  query_result.Fourth_Skill }}</span> </p>
 
+
+                                        {% if query_result.Fifth_Skill %}
+
+                                            <p> <span class="heading"> 5<sup>th</sup> Skill:</span> <span class="line">{{  query_result.Fifth_Skill_category }} - {{  query_result.Fifth_Skill }}</span> </p>
+
+                                            
+                                            
+                                        {% endif %}
+                                    {% endif %}
+                            {% endif %}
+                    {% endif %}
+                {% endif %}
+                    
+                <br>
+                    
+
+                {% if query_result.First_Language %}
+                    <hr  class="horizontal_divider">
+                    <br>
+                    <p class="main_heading d-flex justify-content-center">Languages</p>
+                    <hr  class="horizontal_divider">
+                    <p> <span class="heading"> 1<sup>st</sup> Language:</span> <span class="line">{{  query_result.First_Language }}</span> </p>
+
+                        {% if query_result.Second_Language %}
+                            <p> <span class="heading"> 2<sup>nd</sup> Language:</span> <span class="line">{{  query_result.Second_Language }}</span> </p>
+                            
+
+                            {% if query_result.Third_Language %}
+
+                                <p> <span class="heading"> 3<sup>rd</sup> Language:</span> <span class="line">{{  query_result.Third_Language }}</span> </p>
                                 
+                                {% if query_result.Fourth_Language %}
+
+                                    <p> <span class="heading"> 4<sup>th</sup> Language:</span> <span class="line">{{  query_result.Fourth_Language }}</span> </p>
                                 
+                                {% endif %}
                             {% endif %}
                         {% endif %}
                 {% endif %}
-        {% endif %}
-    {% endif %}
-        
-    <br>
-        
-
-    {% if query_result.Fist_Language %}
-        <hr  class="horizontal_divider">
-        <br>
-        <p class="main_heading d-flex justify-content-center">Languages</p>
-        <hr  class="horizontal_divider">
-        <p> <span class="heading"> 1<sup>st</sup> Language:</span> <span class="line">{{  query_result.Fist_Language }}</span> </p>
-
-            {% if query_result.Second_Language %}
-                <p> <span class="heading"> 2<sup>nd</sup> Language:</span> <span class="line">{{  query_result.Second_Language }}</span> </p>
                 
+            </div>
 
-                {% if query_result.Third_Language %}
-
-                    <p> <span class="heading"> 3<sup>rd</sup> Language:</span> <span class="line">{{  query_result.Third_Language }}</span> </p>
-                    
-                {% endif %}
-            {% endif %}
-    {% endif %}
-    
-</div>
-
-</div>
-
-{% elif query_result|length < 1 %}
-
-
-<!-- <p class="heading"> Please Build Your Best Profile</p> -->
-
-<p class="main_heading d-flex justify-content-center">Profile does not exist.</p>
-
+        </div>
 
 {% else %}
 

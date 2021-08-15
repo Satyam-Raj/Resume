@@ -12,7 +12,7 @@
                 <img class="profile_image_width" src="{{ user.professional.image.url }}" alt="image"> <br> <br>
                 
                 </div>
-                <p class="p-2  px-md-5 intro"> <a style="color:blue;" class="profiles"> {{  user.professional.First_Name }} {{  user.professional.Last_Name }}</a> <br> {{  user.professional.Date_of_Birth }} <br> {{ user.professional.Mobile_Number }}<br><span class="container-sm">{{  user.professional.Email }} <br> <br> {{  user.professional.Address }} <br> </span> <br> Share your profile : http://127.0.0.1:8000/search?query={{ user.username }}  </p>
+                <p class="p-2  px-md-5 intro"> <a style="color:blue;" class="profiles"> {{  user.professional.First_Name }} {{  user.professional.Last_Name }}</a> <br> {{  user.professional.Date_of_Birth }} <br> {{ user.professional.Mobile_Number }}<br><span class="container-sm">{{  user.professional.Email }} <br> <br> {{  user.professional.Regional_place }}, {{  user.professional.City }}, {{  user.professional.State }}, {{  user.professional.Country }} <br> </span> <br> Share your profile : http://127.0.0.1:8000/search?query={{ user.username }}  </p>
                 
                 
                 
@@ -34,11 +34,11 @@
                 <hr class="horizontal_divider">   
                 <br>
                 <p class="lines" > {{  user.professional.Introduction }}</p>
-
-                {% if user.professional.Currently_or_was_working_for %}
+                <br>
+                {% if user.professional.Job_Title %}
 
                     <p class="heading">Recent Job:</p>
-                    <p class="lines"> {{  user.professional.Currently_or_was_working_for }}</p>
+                    <p class="lines"> {{  user.professional.Job_Title }} | {{  user.professional.Company_Name }} | {{  user.professional.Locaton }} | {{  user.professional.Duration }}</p>
                 
 
                     {% if user.professional.Description %}
@@ -52,57 +52,57 @@
                 
                 <br>
 
-                {% if user.professional.First_Experience %}
+                {% if user.professional.First_Experience_Job_Title %}
                     <hr  class="horizontal_divider">
                     <br>
                     <p class="main_heading d-flex justify-content-center">Experience</p>
                     <hr  class="horizontal_divider">
                     <br>
                     <p class="heading">1<sup>st</sup> Experience:</p>
-                    <p class="lines" > {{  user.professional.First_Experience }}</p>
+                    <p class="lines" > {{  user.professional.First_Experience_Job_Title }} | {{  user.professional.First_Exp_Company_Name }} | {{  user.professional.First_Exp_Company_Location }} | {{  user.professional.First_Exp_Company_Duration }}</p>
 
                     {% if user.professional.First_Experience_Description %}
 
                         <p class="heading"> Description:</p>
                         <p class="lines"> {{  user.professional.First_Experience_Description }}</p>
-                    
+                        <br>
 
-                        {% if user.professional.Second_Experience %}
+                        {% if user.professional.Second_Experience_Job_Title %}
                             <p class="heading">2<sup>nd</sup> Experience:</p>
-                            <p class="lines"> {{  user.professional.Second_Experience }}</p>
+                            <p class="lines"> {{  user.professional.Second_Experience_Job_Title }} |  {{  user.professional.Second_Exp_Company_Name }} |  {{  user.professional.Second_Exp_Company_Location }} |  {{  user.professional.Second_Exp_Company_Duration }}</p>
                         
                             {% if user.professional.Second_Experience_Description %}
 
                                 <p class="heading">Description:</p>
                                 <p class="lines"> {{  user.professional.Second_Experience_Description }}</p>
 
-                            
+                                <br>
 
-                                {% if user.professional.Third_Experience %}
+                                {% if user.professional.Third_Experience_Job_Title %}
                                     <p class="heading">3<sup>rd</sup> Experience:</p>
-                                    <p class="lines" > {{  user.professional.Third_Experience }}</p>
+                                    <p class="lines" > {{  user.professional.Third_Experience_Job_Title }} | {{  user.professional.Third_Exp_Company_Name }} | {{  user.professional.Third_Exp_Company_Location }} | {{  user.professional.Third_Exp_Company_Duration }}</p>
 
                                     {% if user.professional.Third_Experience_Description %}
 
                                         <p class="heading">Description:</p>
                                         <p class="lines" > {{  user.professional.Third_Experience_Description }}</p>
                                 
-
-                                        {% if user.professional.Fourth_Experience %}
+                                        <br>
+                                        {% if user.professional.Fourth_Experience_Job_Title %}
 
                                             <p class="heading">4<sup>th</sup> Experience:</p>
-                                            <p class="lines" > {{  user.professional.Fourth_Experience }}</p>
+                                            <p class="lines" > {{  user.professional.Fourth_Experience_Job_Title }} | {{  user.professional.Fourth_Exp_Company_Name }} | {{  user.professional.Fourth_Exp_Company_Location }} | {{  user.professional.Fourth_Exp_Company_Duration }}</p>
 
                                             {% if user.professional.Fourth_Experience_Description %}
 
                                                 <p class="heading">Description:</p>
                                                 <p class="lines" > {{  user.professional.Fourth_Experience_Description }}</p>
                                             
-
-                                                {% if user.professional.Fifth_Experience %}
+                                                <br>
+                                                {% if user.professional.Fifth_Experience_Job_Title %}
 
                                                     <p class="heading">5<sup>th</sup> Experience:</p>
-                                                    <p class="lines" > {{  user.professional.Fifth_Experience }}</p>
+                                                    <p class="lines" > {{  user.professional.Fifth_Experience_Job_Title }} | {{  user.professional.Fifth_Exp_Company_Name }} | {{  user.professional.Fifth_Exp_Company_Location }} | {{  user.professional.Fifth_Exp_Company_Duration }}</p>
 
                                                     {% if user.professional.Fifth_Experience_Description %}
 
@@ -125,14 +125,14 @@
                 <br>
                     
 
-                {% if user.professional.School %}
+                {% if user.professional.School_Name %}
                     <hr  class="horizontal_divider">
                     <br>
                     <p class="main_heading d-flex justify-content-center">Education</p>
                     <hr  class="horizontal_divider">
                     <br>
                     <p class="heading">School:</p>
-                    <p class="lines" > {{  user.professional.School }}</p>
+                    <p class="lines" > {{  user.professional.Board }} | {{  user.professional.School_Name }} | {{  user.professional.School_Location }} | {{  user.professional.School_Duration }}</p>
 
                     {% if user.professional.School_Description %}
 
@@ -140,11 +140,11 @@
                         <p class="lines" > {{  user.professional.School_Description }}</p>
                     {% endif %}
                 {% endif %}
-
-                {% if user.professional.College %}
+                <br>
+                {% if user.professional.College_Name %}
 
                     <p class="heading">College:</p>
-                    <p class="lines" > {{  user.professional.College }}</p>
+                    <p class="lines" > {{  user.professional.Specialization }} | {{  user.professional.College_Name }} | {{  user.professional.College_Location }} | {{  user.professional.College_Duration }}</p>
 
                     {% if user.professional.College_Description %}
 
@@ -166,26 +166,26 @@
                     <hr  class="horizontal_divider">
                     <br>
 
-                    <p> <span class="heading"> 1<sup>st</sup>  Skill:</span> <span class="line">{{  user.professional.First_Skill }}</span> </p>
+                    <p> <span class="heading"> 1<sup>st</sup>  Skill:</span> <span class="line">{{  user.professional.First_Skill_category }} - {{  user.professional.First_Skill }}</span> </p>
 
                     {% if user.professional.Second_Skill %}
 
-                        <p> <span class="heading"> 2<sup>nd</sup> Skill:</span> <span class="line">{{  user.professional.Second_Skill }}</span> </p>
+                        <p> <span class="heading"> 2<sup>nd</sup> Skill:</span> <span class="line">{{  user.professional.Second_Skill_category }} - {{  user.professional.Second_Skill }}</span> </p>
 
 
                             {% if user.professional.Third_Skill %}
 
-                                <p> <span class="heading"> 3<sup>rd</sup> Skill:</span> <span class="line">{{  user.professional.Third_Skill }}</span> </p>
+                                <p> <span class="heading"> 3<sup>rd</sup> Skill:</span> <span class="line">{{  user.professional.Third_Skill_category }} - {{  user.professional.Third_Skill }}</span> </p>
 
 
                                     {% if user.professional.Fourth_Skill %}
 
-                                        <p> <span class="heading"> 4<sup>th</sup> Skill:</span> <span class="line">{{  user.professional.Fourth_Skill }}</span> </p>
+                                        <p> <span class="heading"> 4<sup>th</sup> Skill:</span> <span class="line">{{  user.professional.Fourth_Skill_category }} - {{  user.professional.Fourth_Skill }}</span> </p>
 
 
                                         {% if user.professional.Fifth_Skill %}
 
-                                            <p> <span class="heading"> 5<sup>th</sup> Skill:</span> <span class="line">{{  user.professional.Fifth_Skill }}</span> </p>
+                                            <p> <span class="heading"> 5<sup>th</sup> Skill:</span> <span class="line">{{  user.professional.Fifth_Skill_category }} - {{  user.professional.Fifth_Skill }}</span> </p>
 
                                             
                                             
@@ -198,12 +198,12 @@
                 <br>
                     
 
-                {% if user.professional.Fist_Language %}
+                {% if user.professional.First_Language %}
                     <hr  class="horizontal_divider">
                     <br>
                     <p class="main_heading d-flex justify-content-center">Languages</p>
                     <hr  class="horizontal_divider">
-                    <p> <span class="heading"> 1<sup>st</sup> Language:</span> <span class="line">{{  user.professional.Fist_Language }}</span> </p>
+                    <p> <span class="heading"> 1<sup>st</sup> Language:</span> <span class="line">{{  user.professional.First_Language }}</span> </p>
 
                         {% if user.professional.Second_Language %}
                             <p> <span class="heading"> 2<sup>nd</sup> Language:</span> <span class="line">{{  user.professional.Second_Language }}</span> </p>
@@ -213,6 +213,11 @@
 
                                 <p> <span class="heading"> 3<sup>rd</sup> Language:</span> <span class="line">{{  user.professional.Third_Language }}</span> </p>
                                 
+                                {% if user.professional.Fourth_Language %}
+
+                                    <p> <span class="heading"> 4<sup>th</sup> Language:</span> <span class="line">{{  user.professional.Fourth_Language }}</span> </p>
+                                
+                                {% endif %}
                             {% endif %}
                         {% endif %}
                 {% endif %}

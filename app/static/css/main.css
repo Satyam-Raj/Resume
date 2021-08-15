@@ -145,6 +145,13 @@ body {
   font-size: 125%;
 }
 
+.sub_heading_edit_profile{
+  font-family: 'Berkshire Swash', cursive;
+  color: rgb(67, 80, 255);
+  font-size: 115%;
+}
+
+
 .lines{
   /* font-family: 'Flamenco', cursive; */
   /* font-size: 125%; */
@@ -167,6 +174,13 @@ body {
   margin: auto;
   border-top: 1px solid rgb(67, 80, 255)
 }
+
+.edit_profile_horizontal_divider{
+  width:100%;
+  margin: auto;
+  border-top: 1px solid rgb(67, 80, 255)
+}
+
 
 .top_profile{
   color: white;

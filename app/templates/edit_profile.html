@@ -1,14 +1,399 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load crispy_forms_tags %}
 
-<div class="form-group" style="margin-left: 33.33%; color:rgb(248, 248, 248); width: 33.33%;">
+<div  style="margin-left: 24%; color:rgb(248, 248, 248); width: 50%;">
     <h1>Edit Profile</h1>
     <form method="POST" enctype="multipart/form-data">
   
         {% csrf_token %}
-        {{ profile_form.as_p }}
+        <div class="form-row">
+
+          <div class="form-group col-md-6 mb-0">
+            {{ profile_form.First_Name|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-6 mb-0">
+            {{ profile_form.Last_Name|as_crispy_field }}
+          </div>
+
+        </div>
+        <br>
+        <div class="form-row">
+          
+          <div class="form-group col-md-6 mb-0">
+            {{ profile_form.Date_of_Birth|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-6 mb-0">
+            {{ profile_form.Mobile_Number|as_crispy_field }}
+          </div>
+
+        </div>
+        <br>
+        {{ profile_form.Email|as_crispy_field }}
+        <br>
+
+        <div class="form-row">
+          
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.Country|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.State|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.City|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.Regional_place|as_crispy_field }}
+          </div>
+
+
+        </div>
+
+
+        <br>
+        <hr  class="edit_profile_horizontal_divider">
+        <br>
+
+        <p class="main_heading d-flex justify-content-center">Introduction</p>
+        <hr class="edit_profile_horizontal_divider">   
+
+        <br>
+
+        {{ profile_form.Introduction|as_crispy_field }}
+        <br>
+        <hr  class="edit_profile_horizontal_divider">
+        <br>
+
+        <p class="main_heading d-flex justify-content-center">Recent Job</p>
+        <hr class="edit_profile_horizontal_divider">
+        <br>
+        <div class="form-row">
+          
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.Job_Title|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.Company_Name|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.Locaton|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.Duration|as_crispy_field }}
+          </div>
+
+
+        </div>
+
+        <br>
+        {{ profile_form.Description|as_crispy_field }}
+        <br>
+        
+        <hr  class="edit_profile_horizontal_divider">
+        <br>
+
+        <p class="main_heading d-flex justify-content-center">Experience</p>
+        <hr class="edit_profile_horizontal_divider">
+        <br>
+
+        <p class="sub_heading_edit_profile" > <u> 1<sup>st</sup> Experience : </u></p>
+
+        <div class="form-row">
+        
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.First_Experience_Job_Title|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.First_Exp_Company_Name|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.First_Exp_Company_Location|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.First_Exp_Company_Duration|as_crispy_field }}
+          </div>
+
+
+        </div>
+
+
+        <br>
+        {{ profile_form.First_Experience_Description|as_crispy_field }}
+        <br> 
+
+        <p class="sub_heading_edit_profile" > <u> 2<sup>nd</sup> Experience : </u></p>
+
+        <div class="form-row">
+          
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.Second_Experience_Job_Title|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.Second_Exp_Company_Name|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.Second_Exp_Company_Location|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.Second_Exp_Company_Duration|as_crispy_field }}
+          </div>
+
+
+        </div>
+
+        <br>
+        {{ profile_form.Second_Experience_Description|as_crispy_field }}
+        <br>
+
+        <p class="sub_heading_edit_profile" > <u> 3<sup>rd</sup> Experience : </u></p>
+
+        <div class="form-row">
+          
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.Third_Experience_Job_Title|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.Third_Exp_Company_Name|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.Third_Exp_Company_Location|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.Third_Exp_Company_Duration|as_crispy_field }}
+          </div>
+
+
+        </div>
+
+
+        <br>
+        {{ profile_form.Third_Experience_Description|as_crispy_field }}
+        <br>
+
+        <p class="sub_heading_edit_profile" > <u> 4<sup>th</sup> Experience : </u></p>
+
+
+        <div class="form-row">
+          
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.Fourth_Experience_Job_Title|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.Fourth_Exp_Company_Name|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.Fourth_Exp_Company_Location|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.Fourth_Exp_Company_Duration|as_crispy_field }}
+          </div>
+
+
+        </div>
+
+
+        <br>
+        {{ profile_form.Fourth_Experience_Description|as_crispy_field }}
+        <br>
+
+        <p class="sub_heading_edit_profile" > <u> 5<sup>th</sup> Experience : </u></p>
+
+        <div class="form-row">
+          
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.Fifth_Experience_Job_Title|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.Fifth_Exp_Company_Name|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.Fifth_Exp_Company_Location|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.Fifth_Exp_Company_Duration|as_crispy_field }}
+          </div>
+
+
+        </div>
+
+
+        <br>
+        {{ profile_form.Fifth_Experience_Description|as_crispy_field }}
+        <br>
+        
+        <hr  class="edit_profile_horizontal_divider">
+        <br>
+
+        <p class="main_heading d-flex justify-content-center">Education</p>
+        <hr class="edit_profile_horizontal_divider">
+        <br>
+
+        <p class="sub_heading_edit_profile" > <u> School : </u></p>
+
+
+        <div class="form-row">
+          
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.Board|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.School_Name|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.School_Location|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.School_Duration|as_crispy_field }}
+          </div>
+
+
+        </div>
+
+
+        <br>
+
+
+        {{ profile_form.School_Description|as_crispy_field }}
+        <br>
+
+        <p class="sub_heading_edit_profile" > <u>  College : </u></p>
+
+        <div class="form-row">
+          
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.Specialization|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.College_Name|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.College_Location|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.College_Duration|as_crispy_field }}
+          </div>
+
+
+        </div>
+
+
+        <br>
+        {{ profile_form.College_Description|as_crispy_field }}
+        <br>
+        <hr  class="edit_profile_horizontal_divider">
+        <br>
+
+        <p class="main_heading d-flex justify-content-center">Skills</p>
+        <hr class="edit_profile_horizontal_divider">
+        <br>
+
+        <p class="sub_heading_edit_profile" > <u> 1<sup>st</sup> Skill : </u></p>
+
+        <div class="form-row">
+          
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.First_Skill_category|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-9 mb-0">
+            {{ profile_form.First_Skill|as_crispy_field }}
+          </div>
+          
+        </div>
+
+
+        <br>
+
+        <p class="sub_heading_edit_profile" > <u> 2<sup>nd</sup> Skill : </u></p>
+
+        <div class="form-row">
+          
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.Second_Skill_category|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-9 mb-0">
+            {{ profile_form.Second_Skill|as_crispy_field }}
+          </div>
+          
+        </div>
+
+        <br>
+
+        <p class="sub_heading_edit_profile" > <u> 3<sup>rd</sup> Skill : </u></p>
+
+        <div class="form-row">
+          
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.Third_Skill_category|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-9 mb-0">
+            {{ profile_form.Third_Skill|as_crispy_field }}
+          </div>
+          
+        </div>
+
+
+        <br>
+
+        <p class="sub_heading_edit_profile" > <u> 4<sup>th</sup> Skill : </u></p>
+
+        <div class="form-row">
+          
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.Fourth_Skill_category|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-9 mb-0">
+            {{ profile_form.Fourth_Skill|as_crispy_field }}
+          </div>
+          
+        </div>
+
+        <br>
+
+        <p class="sub_heading_edit_profile" > <u> 5<sup>th</sup> Skill : </u></p>
+
+        <div class="form-row">
+          
+          <div class="form-group col-md-3 mb-0">
+            {{ profile_form.Fifth_Skill_category|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-9 mb-0">
+            {{ profile_form.Fifth_Skill|as_crispy_field }}
+          </div>
+          
+        </div>
+
+        <br>
+        <hr  class="edit_profile_horizontal_divider">
+        <br>
+
+        <p class="main_heading d-flex justify-content-center">Languages</p>
+        <hr class="edit_profile_horizontal_divider">
+        <br>
+        <div class="form-row">
+          
+          <div class="form-group col-md-6 mb-0">
+            {{ profile_form.First_Language|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-6 mb-0">
+            {{ profile_form.Second_Language|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-6 mb-0">
+            {{ profile_form.Third_Language|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-6 mb-0">
+            {{ profile_form.Fourth_Language|as_crispy_field }}
+          </div>
+
+        </div>
+        <br>
+
+        {{ profile_form.image|as_crispy_field }}
+
+         <br>
+         <br>
+
         <input class="btn btn-primary" type="submit" value="Update">
-  
     </form>
   </div>
   

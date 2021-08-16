@@ -16,6 +16,16 @@
         </div>
         </div>
 
+    {% else %}
+
+        <div class="container ">
+        <div class=" search">
+
+        <p class="main_heading " > <a href="{% url 'profile_search' value.pk %}"> <img class="search_profile_image_width border border-dark" src="{{ value.image.url }}" alt="image"> <span class="search_text_align">({{  value.user }})</span> </a>  </p>
+
+        </div>
+        </div>
+
      
     {% endif %}
 

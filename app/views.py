@@ -51,48 +51,53 @@ def register_view(request):
 
         # check for errorneous input
         if len(username)>10:
-            messages.error(request,"Username must be under 10 characters")
+            messages.warning(request,"Username must be under 10 characters")
             return redirect('index')
 
         if len(username)==0:
-            messages.error(request,"Please fill the Username")
+            messages.warning(request,"Please fill the Username")
             return redirect('index')
 
 
         if len(fname)==0:
-            messages.error(request,"Please fill the First Name")
+            messages.warning(request,"Please fill the First Name")
             return redirect('index')
 
         if len(fname)>20:
-            messages.error(request,"Please keep First Name under 20 characters.")
+            messages.warning(request,"Please keep First Name under 20 characters.")
             return redirect('index')
 
         if len(lname)==0:
-            messages.error(request,"Please fill the Last Name")
+            messages.warning(request,"Please fill the Last Name")
             return redirect('index')
 
         if len(lname)>20:
-            messages.error(request,"Please keep Last Name under 20 characters.")
+            messages.warning(request,"Please keep Last Name under 20 characters.")
             return redirect('index')
 
         if len(email)==0:
-            messages.error(request,"Please fill the email")
+            messages.warning(request,"Please fill the email")
             return redirect('index')
 
         if len(email)>80:
-            messages.error(request,"Please keep email address shorter")
+            messages.warning(request,"Please keep email address shorter")
             return redirect('index')
 
         if len(pass1)>100:
-            messages.error(request,"Please keep password shorter to remember.")
+            messages.warning(request,"Please keep password shorter to remember.")
             return redirect('index')
 
+        if len(pass1)<5:
+            messages.warning(request,"Password too short")
+            return redirect('index')
+
+
         if len(pass1)==0:
-            messages.error(request,"Please fill password.")
+            messages.warning(request,"Please fill password.")
             return redirect('index')
 
         if not username.isalnum():
-            messages.error(request, "Username consists of alphabet and numbers only")
+            messages.warning(request, "Username consists of alphabet and numbers only")
             
         if pass1 != pass2:
             messages.error(request, "Password do not match")

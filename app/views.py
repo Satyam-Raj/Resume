@@ -50,8 +50,8 @@ def register_view(request):
         pass2=request.POST['pass2']
 
         # check for errorneous input
-        if len(username)>10:
-            messages.warning(request,"Username must be under 10 characters")
+        if len(username)>20:
+            messages.warning(request,"Username is too large")
             return redirect('index')
 
         if len(username)==0:

@@ -22,7 +22,7 @@ class Professional(models.Model):
     
 
     Mobile_Number       =                    models.CharField(max_length=10,null=True)
-    Email               =                    models.CharField(max_length=80,null=True)
+    Email               =                    models.CharField(max_length=80,null=True, blank=True)
     
     Country             =                    models.CharField(max_length=20,null=True)
     State               =                    models.CharField(max_length=20,null=True)

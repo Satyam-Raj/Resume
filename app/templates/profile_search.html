@@ -11,7 +11,7 @@
                 <img class="profile_image_width" src="{{ query_result.image.url }}" alt="image"> <br> <br>
                 
                 </div>
-                <p class="p-2  px-md-5 intro"> <a style="color:blue;" class="profiles"> {{  query_result.First_Name }} {{  query_result.Last_Name }}</a> <br> {{  query_result.Date_of_Birth }} <br> {{ query_result.Mobile_Number }}<br><span class="container-sm">{{  query_result.Email }} <br> <br> {{  query_result.Regional_place }}, {{  query_result.City }}, {{  query_result.State }}, {{  query_result.Country }} <br> </span> <br> Share your profile : http://127.0.0.1:8000/search?query={{ user.username }}  </p>
+                <p class="p-2  px-md-5 intro"> <a style="color:blue;" class="profiles"> {{  query_result.First_Name }} {{  query_result.Last_Name }}</a>  <br> <br> {{  query_result.Date_of_Birth }} <br> {{ query_result.Mobile_Number }}<br><span class="container-sm">{{ user.email }}  {% if query_result.Email %}, or  <br> {{  query_result.Email }} {% endif %} <br> <br>{{  query_result.Regional_place }}, {{  query_result.City }}, {{  query_result.State }}, {{  query_result.Country }} <br> </span> </p>
                 
                 
                 

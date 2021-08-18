@@ -134,7 +134,7 @@ class Profile_update_form(forms.ModelForm):
             'Date_of_Birth'                      :          forms.TextInput(attrs={'class':'form-control', 'placeholder':'Your Date of Birth'}),
 
             'Mobile_Number'                     :           forms.TextInput(attrs={'class':'form-control', 'placeholder':'Your mobile number'}),
-            'Email'                             :           forms.TextInput(attrs={'class':'form-control', 'placeholder':'Your email'}),
+            'Email'                             :           forms.TextInput(attrs={'class':'form-control', 'placeholder':'Your email (optional field)'}),
 
 
             'Country'                               :           forms.TextInput(attrs={'class':'form-control', 'placeholder':'Country'}),

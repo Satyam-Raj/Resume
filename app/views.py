@@ -55,12 +55,12 @@ def register_view(request):
             return redirect('index')
 
         if len(username)==0:
-            messages.warning(request,"Please fill the Username")
+            messages.error(request,"Please fill the Username")
             return redirect('index')
 
 
         if len(fname)==0:
-            messages.warning(request,"Please fill the First Name")
+            messages.error(request,"Please fill the First Name")
             return redirect('index')
 
         if len(fname)>20:
@@ -68,7 +68,7 @@ def register_view(request):
             return redirect('index')
 
         if len(lname)==0:
-            messages.warning(request,"Please fill the Last Name")
+            messages.error(request,"Please fill the Last Name")
             return redirect('index')
 
         if len(lname)>20:
@@ -76,7 +76,7 @@ def register_view(request):
             return redirect('index')
 
         if len(email)==0:
-            messages.warning(request,"Please fill the email")
+            messages.error(request,"Please fill the email")
             return redirect('index')
 
         if len(email)>80:
@@ -88,12 +88,12 @@ def register_view(request):
             return redirect('index')
 
         if len(pass1)<5:
-            messages.warning(request,"Password too short")
+            messages.error(request,"Password too short")
             return redirect('index')
 
 
         if len(pass1)==0:
-            messages.warning(request,"Please fill password.")
+            messages.error(request,"Please fill password.")
             return redirect('index')
 
         if not username.isalnum():
@@ -192,17 +192,21 @@ def logout_view(request):
 
 
 def search_view(request):
-    query = request.GET['query']
+    query = request.GET['username']
     
     if len(query)>10:
-        messages.warning(request, "Please type correct username")
+        messages.error(request, "Please type correct username")
+        return redirect('profile')
+
+    if len(query)==0:
+        messages.error(request, "Please type something to search")
         return redirect('profile')
         
     else:       
         query_filter  = Professional.objects.filter(user__username__icontains=query).order_by()
 
     if query_filter.count()==0:
-        messages.warning(request, "Please type correct username")
+        messages.error(request, "Please type correct username")
         return redirect('profile')
         
     # print(query)

@@ -7,12 +7,12 @@
 
 {% if user.professional.First_Name %}
 
-            <div class="d-flex justify-content-center row mx-md-n5 top_profile ">
+            <div class="d-flex justify-content-center top_profile ">
                 <div class="p-2" style=" margin-top: 2%;">
                 <img class="profile_image_width" src="{{ user.professional.image.url }}" alt="image"> <br> <br>
                 
                 </div>
-                <p class="p-2  px-md-5 intro"> <a style="color:blue;" class="profiles"> {{  user.professional.First_Name }} {{  user.professional.Last_Name }}</a>  <br> {{  user.professional.Date_of_Birth }} <br> {{ user.professional.Mobile_Number }}<br><span class="container-sm">{{ user.email }}  {% if user.professional.Email %}, or <br>   {{  user.professional.Email }} {% endif %}<br>  {{  user.professional.Regional_place }}, {{  user.professional.City }}, {{  user.professional.State }}, {{  user.professional.Country }} <br> </span> <br> Share your profile : http://127.0.0.1:8000/search?query={{ user.username }}  </p>
+                <p class="p-2  px-md-5 intro"> <a style="color:blue;" class="profiles"> {{  user.professional.First_Name }} {{  user.professional.Last_Name }}</a>  <br> {{  user.professional.Date_of_Birth }} <br> {{ user.professional.Mobile_Number }}<br><span class="container-sm">{{ user.email }}  {% if user.professional.Email %}, or <br>   {{  user.professional.Email }} {% endif %}<br>  {{  user.professional.Regional_place }}, {{  user.professional.City }}, {{  user.professional.State }}, {{  user.professional.Country }} <br> </span> <br> Share your profile : http://127.0.0.1:8000/search?username={{ user.username }}  </p>
                 
                 
                 
@@ -20,7 +20,7 @@
 
             
 
-        <div style=" color: white;">
+        <div style=" color: white;overflow-x: hidden;">
             
 
             <div class="container-fluid">        
@@ -36,8 +36,12 @@
                 <p class="lines" > {{  user.professional.Introduction }}</p>
                 <br>
                 {% if user.professional.Job_Title %}
+                    <hr  class="horizontal_divider">
+                    <br>
 
-                    <p class="heading">Recent Job:</p>
+                    <p class="main_heading d-flex justify-content-center">Recent Job</p>
+                    <hr class="horizontal_divider">   
+                    <br>
                     <p class="lines"> {{  user.professional.Job_Title }} | {{  user.professional.Company_Name }} | {{  user.professional.Locaton }} | {{  user.professional.Duration }}</p>
                 
 

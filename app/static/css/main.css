@@ -192,9 +192,8 @@ body {
   /* font-family: 'Montserrat Alternates', sans-serif; */
   font-size: 100%;
   color: rgb(233, 233, 233);
-
+  
 }
-
 
 
 .horizontal_divider{
@@ -248,6 +247,10 @@ body {
   font-size: 140%
 }
 
+.subs_coming_soon{
+  color: blue;
+  font-size:220%;
+}
 
 
 
@@ -266,8 +269,7 @@ body {
 
 
 
-
-/* from here animation section begins for new user in profile-page who just joined but not built profile */
+/*(for profile section) from here animation section begins for new user in profile-page who just joined but not built profile */
 
 .base {
   width: 500px;
@@ -368,13 +370,7 @@ body {
 }
 
 
-/* till here animation section, for new user in profile-page who just joined but not built profile */
-
-
-
-
-
-
+/* (for profile section) till here animation section, for new user in profile-page who just joined but not built profile */
 
 
 

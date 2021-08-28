@@ -20,7 +20,7 @@ def index_view(request):
 
 def login_view(request):
     if request.method == 'POST':
-        loginusername = request.POST['loginusername']
+        loginusername = request.POST['loginusername'].lower()
         loginpassword = request.POST['loginpassword']
 
         user = authenticate(username=loginusername, password=loginpassword)

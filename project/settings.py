@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django_filters',
     'django_cleanup',
     'crispy_forms',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -156,6 +157,30 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'satyamraj80@gmail.com'
 EMAIL_HOST_PASSWORD = 'rbhrbomfhnluvmpg'
+
+# till here the section is for forgot password (SMTP configurations):
+
+
+
+
+
+
+# the lower section is for remote (AWS S3 bucket config) static and media files hosting:
+
+# AWS_ACCESS_KEY_ID = ''
+# AWS_SECRET_ACCESS_KEY = ''
+# AWS_STORAGE_BUCKET_NAME = ''
+# AWS_QUERYSTRING_AUTH = False
+# AWS_DEFAULT_ACL = ''
+
+
+# AWS_S3_FILE_OVERWRITE = False
+# DEFAULT_FILE_STORAGE = ''
+# STATICFILES_STORAGE = ''
+
+
+# the UPPER section is for remote (AWS S3 bucket config) static and media files hosting
+
 
 
 

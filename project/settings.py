@@ -178,8 +178,8 @@ EMAIL_HOST_PASSWORD = 'rbhrbomfhnluvmpg'
 
 # the lower section is for remote (AWS S3 bucket config) static and media files hosting:
 
-AWS_ACCESS_KEY_ID = 'AKIAZ2UNAS6B7MG7Q6NX'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = 'AKIAZ2UNAS6BY6OP7FQ5'
+AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'mineresume-bucket'
 AWS_QUERYSTRING_AUTH = False
 AWS_DEFAULT_ACL = 'public-read'

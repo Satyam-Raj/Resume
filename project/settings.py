@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-m_hn1+5#y4ouw#u_p^e#s&)azguon&#*s0hl3rut$tk^=k^d@-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['mineresume.xyz']
+ALLOWED_HOSTS = ['143.244.129.197', 'mineresume.xyz']
 
 
 # Application definition
@@ -178,16 +178,16 @@ EMAIL_HOST_PASSWORD = 'rbhrbomfhnluvmpg'
 
 # the lower section is for remote (AWS S3 bucket config) static and media files hosting:
 
-# AWS_ACCESS_KEY_ID = ''
-# AWS_SECRET_ACCESS_KEY = ''
-# AWS_STORAGE_BUCKET_NAME = ''
-# AWS_QUERYSTRING_AUTH = False
-# AWS_DEFAULT_ACL = ''
+AWS_ACCESS_KEY_ID = 'AKIAZ2UNAS6BY6OP7FQ5'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'mineresume-bucket'
+AWS_QUERYSTRING_AUTH = False
+AWS_DEFAULT_ACL = 'public-read'
 
 
-# AWS_S3_FILE_OVERWRITE = False
-# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+AWS_S3_FILE_OVERWRITE = False
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
 
 
 # the UPPER section is for remote (AWS S3 bucket config) static and media files hosting
